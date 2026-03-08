@@ -166,15 +166,15 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Content - Static title/subtitle, no typing animation */}
+        {/* Content - Title and subtitle on ONE line, different colors */}
         <div className="relative h-full flex items-end justify-center pb-24 md:pb-32 z-10">
-          <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
-            {/* Static Title and Subtitle - Playfair Display font */}
+          <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
+            {/* Static Title and Subtitle on ONE LINE - Playfair Display font */}
             <div>
               {heroImagesDesktop[currentImage].isNameCard ? (
-                /* First slide - Name Card */
-                <div className="space-y-4">
-                  <h1 className="text-white font-semibold leading-tight text-4xl md:text-6xl lg:text-7xl px-4" 
+                /* First slide - Name Card on one line */
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 flex-wrap">
+                  <h1 className="text-white font-semibold leading-tight text-3xl md:text-5xl lg:text-6xl" 
                     style={{ 
                       fontFamily: 'Playfair Display, serif',
                       textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
@@ -182,7 +182,8 @@ const Home = () => {
                     }}>
                     {heroImagesDesktop[currentImage].title}
                   </h1>
-                  <p className="text-[#C9A961] text-xl md:text-3xl font-medium tracking-wide"
+                  <span className="hidden sm:inline text-[#C9A961] text-3xl md:text-5xl font-light">|</span>
+                  <p className="text-[#C9A961] text-2xl md:text-4xl lg:text-5xl font-medium"
                     style={{ 
                       fontFamily: 'Playfair Display, serif',
                       textShadow: '0 2px 15px rgba(0,0,0,0.7)'
@@ -191,9 +192,9 @@ const Home = () => {
                   </p>
                 </div>
               ) : (
-                /* Other slides - Title & Subtitle */
-                <div className="space-y-4">
-                  <h2 className="text-white font-bold leading-tight text-3xl md:text-5xl lg:text-6xl px-4 tracking-wider" 
+                /* Other slides - Title & Subtitle on ONE LINE */
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 flex-wrap px-4">
+                  <h2 className="text-white font-bold leading-tight text-2xl md:text-4xl lg:text-5xl tracking-widest" 
                     style={{ 
                       fontFamily: 'Playfair Display, serif',
                       textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
@@ -201,7 +202,8 @@ const Home = () => {
                     }}>
                     {heroImagesDesktop[currentImage].title}
                   </h2>
-                  <p className="text-white/90 text-lg md:text-2xl lg:text-3xl font-normal max-w-4xl mx-auto px-4"
+                  <span className="hidden sm:inline text-white/50 text-2xl md:text-4xl font-light">•</span>
+                  <p className="text-[#C9A961] text-base md:text-xl lg:text-2xl font-normal"
                     style={{ 
                       fontFamily: 'Lora, serif',
                       textShadow: '0 2px 15px rgba(0,0,0,0.7)',
