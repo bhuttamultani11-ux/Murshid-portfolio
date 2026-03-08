@@ -1,20 +1,22 @@
 {
-  "short_name": "Darbar-e-Aliya",
-  "name": "The Beacon of Fazl - Darbar-e-Aliya Qadriya Barakatiya",
-  "description": "Official portfolio of Syed Ishfaq Mohy Uddin Shah - A beacon of divine light spreading ancestral wisdom worldwide",
+  "short_name": " ",
+  "name": "Darbar-e-Aliya Qadriya Barakatiya",
+  "description": "Official portfolio of Syed Ishfaq Mohy Uddin Shah - The Beacon of Fazl, spreading ancestral Sufi wisdom worldwide",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
-      "src": "favicon.png",
+      "src": "icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#2C4A3E",
   "background_color": "#F5F1E8",
