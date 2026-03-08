@@ -25,9 +25,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="text-2xl md:text-3xl font-bold text-[#2C4A3E]" style={{ fontFamily: 'Crimson Text, serif' }}>
-              Darbar-e-Aliya
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Darbar-e-Aliya" 
+              className="h-14 md:h-16 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
