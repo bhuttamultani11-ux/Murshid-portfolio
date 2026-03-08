@@ -10,8 +10,8 @@ import { Separator } from '../components/ui/separator';
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
-  // Desktop hero images with corresponding Sufi quotes
-  const heroImages = [
+  // Desktop hero images with Sufi quotes
+  const heroImagesDesktop = [
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/r92xfrt7_desktop1%20%281%29.jpg',
       alt: 'At the Sacred Shrine',
@@ -39,13 +39,41 @@ const Home = () => {
     }
   ];
 
+  // Mobile/Android hero images with same quotes
+  const heroImagesMobile = [
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/dvuxaclw_android1%20%281%29.jpg',
+      alt: 'At the Sacred Shrine',
+      quote: 'The wound is the place where the Light enters you'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/7cxq7px6_android1%20%282%29.jpg',
+      alt: 'Brotherhood in Faith',
+      quote: 'What you seek is seeking you'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/4n01qt0x_android1%20%283%29.jpg',
+      alt: 'Spreading the Message',
+      quote: 'Let yourself be silently drawn by the pull of what you truly love'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/tn0z0k4i_android1%20%284%29.jpg',
+      alt: 'Service to Community',
+      quote: 'Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/iekyfmyk_android1%20%285%29.jpg',
+      alt: 'Voice of Wisdom',
+      quote: 'Love is the bridge between you and everything'
+    }
+  ];
+
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 7000); // Change image every 7 seconds (gives time for quote to be read)
+      setCurrentImage((prev) => (prev + 1) % 5); // Both arrays have 5 images
+    }, 7000); // Change image every 7 seconds
 
     return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const globalReach = [
@@ -76,13 +104,13 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-[#FDFCF9]">
-      {/* Stunning Hero Section - Desktop Only for now */}
+      {/* Stunning Hero Section - Responsive Desktop & Mobile */}
       <section className="relative h-screen overflow-hidden">
-        {/* Animated Image Background - No Cropping */}
-        <div className="absolute inset-0">
-          {heroImages.map((image, index) => (
+        {/* Desktop Images - Hidden on Mobile */}
+        <div className="absolute inset-0 hidden md:block">
+          {heroImagesDesktop.map((image, index) => (
             <div
-              key={index}
+              key={`desktop-${index}`}
               className={`absolute inset-0 transition-opacity duration-2000 ${
                 index === currentImage ? 'opacity-100' : 'opacity-0'
               }`}
@@ -91,15 +119,34 @@ const Home = () => {
                 src={image.url}
                 alt={image.alt}
                 className="w-full h-full object-cover object-center"
-                style={{ objectFit: 'cover' }}
               />
-              {/* Gradient Overlay - Only at bottom for text readability */}
+              {/* Gradient Overlay - Bottom only */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
             </div>
           ))}
         </div>
 
-        {/* Content - Only Quote at Bottom */}
+        {/* Mobile Images - Hidden on Desktop */}
+        <div className="absolute inset-0 block md:hidden">
+          {heroImagesMobile.map((image, index) => (
+            <div
+              key={`mobile-${index}`}
+              className={`absolute inset-0 transition-opacity duration-2000 ${
+                index === currentImage ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={image.url}
+                alt={image.alt}
+                className="w-full h-full object-cover object-center"
+              />
+              {/* Gradient Overlay - Bottom only */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+            </div>
+          ))}
+        </div>
+
+        {/* Content - Same for Both Desktop & Mobile */}
         <div className="relative h-full flex items-end justify-center pb-16 md:pb-20 z-10">
           <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
             {/* Quote with Typing Animation */}
@@ -108,15 +155,15 @@ const Home = () => {
                 <TypeAnimation
                   key={currentImage}
                   sequence={[
-                    heroImages[currentImage].quote,
+                    heroImagesDesktop[currentImage].quote,
                     6000
                   ]}
                   wrapper="div"
                   speed={50}
-                  className="text-3xl md:text-4xl lg:text-5xl"
+                  className="text-2xl md:text-4xl lg:text-5xl px-4"
                   style={{ 
                     textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
-                    minHeight: '120px',
+                    minHeight: '100px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -126,10 +173,10 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Simple Name Badge */}
+            {/* Name Badge */}
             <div>
-              <div className="inline-block bg-black/60 backdrop-blur-md px-8 py-4 rounded-full border border-white/20">
-                <span className="text-white text-lg md:text-xl font-medium" style={{ fontFamily: 'Crimson Text, serif' }}>
+              <div className="inline-block bg-black/60 backdrop-blur-md px-6 md:px-8 py-3 md:py-4 rounded-full border border-white/20">
+                <span className="text-white text-base md:text-xl font-medium" style={{ fontFamily: 'Crimson Text, serif' }}>
                   Syed Ishfaq Mohy Uddin Shah
                 </span>
               </div>
@@ -147,8 +194,8 @@ const Home = () => {
         </button>
 
         {/* Image Navigation Dots */}
-        <div className="absolute bottom-6 right-8 flex gap-2 z-20">
-          {heroImages.map((_, index) => (
+        <div className="absolute bottom-6 right-6 md:right-8 flex gap-2 z-20">
+          {[0, 1, 2, 3, 4].map((index) => (
             <button
               key={index}
               onClick={() => setCurrentImage(index)}
