@@ -9,11 +9,11 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'My Work', path: '/work' },
+    { name: 'Biography', path: '/about' },
+    { name: 'Global Mission', path: '/work' },
     { name: 'Teachings', path: '/teachings' },
-    { name: 'Lineage', path: '/lineage' },
-    { name: 'Resources', path: '/literature' },
+    { name: 'Sacred Lineage', path: '/lineage' },
+    { name: 'Literature', path: '/literature' },
     { name: 'Gallery', path: '/gallery' }
   ];
 

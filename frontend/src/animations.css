@@ -1,0 +1,114 @@
+/* Shining/Glowing Background Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(201, 169, 97, 0.3), 0 0 40px rgba(201, 169, 97, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(201, 169, 97, 0.5), 0 0 60px rgba(201, 169, 97, 0.3);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(201, 169, 97, 0.3);
+    box-shadow: 0 0 10px rgba(201, 169, 97, 0.2);
+  }
+  50% {
+    border-color: rgba(201, 169, 97, 0.7);
+    box-shadow: 0 0 20px rgba(201, 169, 97, 0.4);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Utility Classes */
+.shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    rgba(245, 241, 232, 1) 0%,
+    rgba(201, 169, 97, 0.2) 50%,
+    rgba(245, 241, 232, 1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+.glow-card {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.border-glow {
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+.gradient-animated {
+  background: linear-gradient(
+    270deg,
+    #F5F1E8,
+    #FAF8F3,
+    #8B9D83,
+    #F5F1E8
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient Backgrounds */
+.bg-spiritual-gradient {
+  background: linear-gradient(135deg, #8B9D83 0%, #2C4A3E 50%, #C9A961 100%);
+}
+
+.bg-warm-gradient {
+  background: linear-gradient(135deg, #FAF8F3 0%, #F5F1E8 50%, #C9A961 100%);
+}
+
+.bg-sage-gradient {
+  background: linear-gradient(135deg, #F5F1E8 0%, #8B9D83 50%, #2C4A3E 100%);
+}

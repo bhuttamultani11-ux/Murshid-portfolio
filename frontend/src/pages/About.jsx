@@ -175,10 +175,18 @@ const About = () => {
         </div>
       </section>
 
-      {/* Family */}
-      <section className="py-20 md:py-28 bg-[#FDFCF9]">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <div className="text-center mb-16">
+      {/* Family - Continuing the Sacred Lineage */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-[#F5F1E8] via-[#FAF8F3] to-[#F5F1E8] relative overflow-hidden">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, #8B9D83 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+        
+        <div className="relative max-w-6xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-16 fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: 'Crimson Text, serif' }}>
               Continuing the Sacred Lineage
             </h2>
@@ -186,22 +194,73 @@ const About = () => {
               Blessed with two sons who carry forward the family's blessed heritage of spiritual service.
             </p>
           </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {family.map((member, index) => (
-              <Card key={index} className="bg-white border-[#8B9D83] border-opacity-30 hover:shadow-xl transition-all duration-300">
-                <CardContent className="pt-8 text-center">
-                  <Badge className="mb-4 bg-[#8B9D83] text-white border-none">
-                    {member.role}
-                  </Badge>
-                  <h3 className="text-2xl font-bold text-[#1A1A1A] mb-3" style={{ fontFamily: 'Crimson Text, serif' }}>
-                    {member.name}
-                  </h3>
-                  <p className="text-[#6B6B6B] leading-relaxed">
-                    {member.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+            {/* Elder Son - Syed Nawazish */}
+            <Card className="bg-white border-2 border-[#8B9D83] border-opacity-30 hover:shadow-2xl transition-all duration-500 overflow-hidden glow-card">
+              <CardContent className="pt-8 text-center">
+                <div className="mb-6 relative">
+                  <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-[#C9A961] shadow-xl">
+                    <img 
+                      src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/ubi1isct_syed%20nawazish.jpg" 
+                      alt="Syed Nawazish Mohyuddin"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <Badge className="mb-4 bg-[#8B9D83] text-white border-none text-base px-4 py-2">
+                  Elder Son
+                </Badge>
+                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-3" style={{ fontFamily: 'Crimson Text, serif' }}>
+                  Syed Nawazish Mohyuddin
+                </h3>
+                <p className="text-[#6B6B6B] leading-relaxed mb-6">
+                  Being nurtured to carry the family's sacred trust into the future, continuing the blessed tradition of spiritual guidance
+                </p>
+                <Button 
+                  asChild 
+                  className="bg-[#2C4A3E] hover:bg-[#8B9D83] text-white w-full"
+                >
+                  <a href="https://www.syednawazish.com" target="_blank" rel="noopener noreferrer">
+                    Visit Website
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Younger Son - Syed Faizan */}
+            <Card className="bg-white border-2 border-[#8B9D83] border-opacity-30 hover:shadow-2xl transition-all duration-500 overflow-hidden glow-card">
+              <CardContent className="pt-8 text-center">
+                <div className="mb-6 relative">
+                  <div className="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-[#C9A961] shadow-xl">
+                    <img 
+                      src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/13ml2frm_syed%20Faizan.jpg" 
+                      alt="Syed Faizan Mohyuddin"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <Badge className="mb-4 bg-[#8B9D83] text-white border-none text-base px-4 py-2">
+                  Younger Son
+                </Badge>
+                <h3 className="text-2xl font-bold text-[#1A1A1A] mb-3" style={{ fontFamily: 'Crimson Text, serif' }}>
+                  Syed Faizan Mohyuddin
+                </h3>
+                <p className="text-[#6B6B6B] leading-relaxed mb-6">
+                  Continuing the blessed lineage of spiritual service, upholding the values and teachings of our ancestors
+                </p>
+                <Button 
+                  asChild 
+                  className="bg-[#2C4A3E] hover:bg-[#8B9D83] text-white w-full"
+                >
+                  <a href="https://www.syedfaizan.com" target="_blank" rel="noopener noreferrer">
+                    Visit Website
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
