@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# 🌟 Darbar-e-Aliya Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Official portfolio website for Syed Ishfaq Mohy Uddin Shah - The Beacon of Fazl
 
-## Available Scripts
+## 📋 Project Overview
 
-In the project directory, you can run:
+A beautiful, responsive React-based portfolio website showcasing the spiritual heritage and global mission of Darbar-e-Aliya Qadriya Barakatiya. Features include:
 
-### `npm start`
+- 🎨 Modern, elegant design with custom animations
+- 📱 Fully responsive (mobile, tablet, desktop)
+- 🖼️ Dynamic hero carousel with separate mobile/desktop images
+- 📖 Multi-page architecture (Home, Biography, Global Mission, Teachings, Sacred Lineage, Literature, Gallery)
+- 📲 Progressive Web App (PWA) support - installable on mobile devices
+- 🎯 SEO optimized with Open Graph and Twitter Card metadata
+- ✨ Custom UI components with Shadcn/ui and Tailwind CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Quick Start
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
+- Node.js 16.x or higher
+- Yarn package manager
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd frontend
+yarn install
+```
 
-### `npm run build`
+### Development
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+yarn start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Runs the app at [http://localhost:3000](http://localhost:3000)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Production Build
 
-### `npm run eject`
+```bash
+yarn build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Creates an optimized production build in the `build` folder.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📦 Tech Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Framework**: React 19
+- **Routing**: React Router DOM v7
+- **Styling**: Tailwind CSS v3
+- **UI Components**: Radix UI + Shadcn/ui
+- **Icons**: Lucide React
+- **Build Tool**: Create React App with CRACO
+- **Deployment**: Vercel (recommended)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🎨 Key Features
 
-## Learn More
+### Hero Section
+- Responsive image carousel with 5 desktop and 5 mobile images
+- Smooth cross-fade transitions (7-second intervals)
+- Dynamic text overlays with custom styling
+- No cropping, no gaps - perfect image display
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Branding
+- Transparent logo in header
+- Ornate Islamic calligraphy favicon
+- PWA icons for mobile installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Pages
+1. **Home**: Hero carousel, guiding principles, biography preview
+2. **Biography**: Life story, achievements, family lineage
+3. **Global Mission**: International journeys and community work
+4. **Teachings**: Core spiritual principles and wisdom
+5. **Sacred Lineage**: Family heritage and succession
+6. **Literature**: Published works and writings
+7. **Gallery**: Photo collection of events and gatherings
 
-### Code Splitting
+## 📱 PWA Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The website is installable as a Progressive Web App:
+- Custom app icon (ornate calligraphy design)
+- No text below icon after installation
+- Standalone display mode
+- Theme colors: #2C4A3E (green), #F5F1E8 (cream)
+- Portrait orientation optimized
 
-### Analyzing the Bundle Size
+## 🌐 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This website is optimized for Vercel deployment. See `VERCEL_DEPLOYMENT.md` for detailed instructions.
 
-### Making a Progressive Web App
+### Quick Deploy to Vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone)
 
-### Advanced Configuration
+## 📄 File Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+frontend/
+├── public/
+│   ├── favicon.png (ornate icon)
+│   ├── icon-192.png (PWA icon)
+│   ├── icon-512.png (PWA icon)
+│   ├── logo.png (transparent header logo)
+│   ├── manifest.json (PWA configuration)
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   └── ui/ (Shadcn components)
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Work.jsx
+│   │   ├── Teachings.jsx
+│   │   ├── Lineage.jsx
+│   │   ├── Literature.jsx
+│   │   └── Gallery.jsx
+│   ├── App.js
+│   ├── index.css
+│   └── animations.css
+├── vercel.json (deployment config)
+└── package.json
+```
 
-### Deployment
+## 🎯 SEO & Metadata
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Professional title and description
+- Open Graph tags for Facebook/WhatsApp sharing
+- Twitter Card metadata
+- Keywords optimized for search engines
+- Structured data for rich snippets
 
-### `npm run build` fails to minify
+## 📧 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For inquiries about this website or Darbar-e-Aliya, visit: [babarkatbafaiz.com](https://www.babarkatbafaiz.com)
+
+## 📜 License
+
+© 2025 Darbar-e-Aliya Qadriya Barakatiya. All rights reserved.
+
+---
+
+**Built with ❤️ for spreading spiritual wisdom worldwide**
