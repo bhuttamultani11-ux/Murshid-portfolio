@@ -1,12 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Plane, Users2, BookHeart, Globe2, ArrowRight, Quote, Calendar } from 'lucide-react';
+import { TypeAnimation } from 'react-type-animation';
+import { MapPin, Plane, BookHeart, Globe2, Users2, ArrowRight, Quote, ChevronDown } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { Separator } from '../components/ui/separator';
 
 const Home = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+  
+  const heroImages = [
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/4q2lcewd_1000091055.jpg',
+      alt: 'Spiritual Discourse'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/gb24pnsx_1000084467.jpg',
+      alt: 'In Contemplation'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/kzu3dpcq_1000057012.jpg',
+      alt: 'At Sacred Shrine'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/a5hofb96_1000056974.jpg',
+      alt: 'Leading the Community'
+    },
+    {
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/w320x6hv_1000056933.jpg',
+      alt: 'At Holy Threshold'
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const globalReach = [
     { country: 'United Kingdom', purpose: 'Spiritual gatherings and community building', icon: Globe2 },
     { country: 'Baghdad Sharif', purpose: 'Pilgrimage and connecting with Sufi heritage', icon: MapPin },
@@ -29,103 +64,146 @@ const Home = () => {
     }
   ];
 
+  const scrollToContent = () => {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-[#FDFCF9]">
-      {/* Hero Section - More Personal */}
-      <section className="relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#F5F1E8] via-[#FDFCF9] to-[#FAF8F3]">
-          <div className="absolute inset-0 opacity-5" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, #8B9D83 1px, transparent 0)',
-            backgroundSize: '32px 32px'
-          }}></div>
+      {/* Stunning Hero Section with Animated Images */}
+      <section className="relative h-screen overflow-hidden">
+        {/* Animated Image Background with Ken Burns Effect */}
+        <div className="absolute inset-0">
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-2000 ${
+                index === currentImage ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{
+                animation: index === currentImage ? 'kenBurns 20s ease-in-out infinite' : 'none'
+              }}
+            >
+              <img
+                src={image.url}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+              />
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+            </div>
+          ))}
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-8">
-              <div>
-                <Badge className="mb-6 bg-[#8B9D83] text-white hover:bg-[#2C4A3E] border-none text-sm px-4 py-2">
-                  Current Sajjada Nasheen • Spiritual Guide
-                </Badge>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1A1A1A] mb-4 leading-tight" style={{ fontFamily: 'Crimson Text, serif' }}>
-                  Syed Ishfaq<br/>Mohy Uddin Shah
-                </h1>
-                
-                <div className="flex items-center gap-3 mb-6">
-                  <Separator className="w-16 bg-[#C9A961]" />
-                  <span className="text-lg text-[#8B9D83] font-medium">The Beacon of Fazl</span>
-                </div>
-
-                <p className="text-xl md:text-2xl text-[#2C4A3E] mb-6 font-medium leading-relaxed">
-                  Spreading the ancestral teachings of Sufism across continents, 
-                  bridging centuries of spiritual wisdom with the hearts of today's seekers.
-                </p>
-
-                <p className="text-lg text-[#6B6B6B] leading-relaxed mb-8">
-                  As the current bearer of a blessed lineage that traces back to the Prophet Muhammad (ﷺ) 
-                  through Sheikh Abdul Qadir Jilani, I dedicate my life to preserving and sharing the 
-                  profound teachings passed down through generations of Sufi masters.
-                </p>
-
-                <div className="flex flex-wrap gap-4">
-                  <Button asChild size="lg" className="bg-[#2C4A3E] hover:bg-[#8B9D83] text-white px-8 py-6 text-lg">
-                    <Link to="/about">
-                      Discover My Journey
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline" className="border-2 border-[#8B9D83] text-[#2C4A3E] hover:bg-[#F5F1E8] px-8 py-6 text-lg">
-                    <Link to="/work">My Global Mission</Link>
-                  </Button>
-                </div>
-              </div>
-
-              {/* Location */}
-              <Card className="bg-white/80 backdrop-blur border-[#8B9D83] border-opacity-30 shadow-lg">
-                <CardContent className="pt-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-[#F5F1E8] rounded-full flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-[#2C4A3E]" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-[#8B9D83] font-medium">Based at</div>
-                      <div className="text-lg font-semibold text-[#1A1A1A]">Darbar-e-Aliya Qadriya Fazliya</div>
-                      <div className="text-sm text-[#6B6B6B]">Kot Sharif, Faisalabad, Pakistan</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+        {/* Content Overlay */}
+        <div className="relative h-full flex items-center justify-center z-10">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
+            {/* Badge */}
+            <div className="mb-8 animate-fadeIn">
+              <Badge className="bg-[#C9A961]/90 backdrop-blur-sm text-white hover:bg-[#C9A961] border-none text-sm md:text-base px-6 py-2 shadow-2xl">
+                Current Sajjada Nasheen • Spiritual Guide
+              </Badge>
             </div>
 
-            {/* Right Image */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative">
-                {/* Decorative elements */}
-                <div className="absolute -inset-4 bg-gradient-to-br from-[#C9A961]/20 to-[#8B9D83]/20 blur-2xl rounded-full"></div>
-                <div className="absolute -top-8 -right-8 w-24 h-24 border-4 border-[#C9A961] rounded-full opacity-30"></div>
-                <div className="absolute -bottom-6 -left-6 w-32 h-32 border-4 border-[#8B9D83] rounded-full opacity-20"></div>
-                
-                {/* Main Image */}
-                <div className="relative">
-                  <img 
-                    src="https://babarkatbafaiz.com/sajjadanashin.jpeg" 
-                    alt="Syed Ishfaq Mohy Uddin Shah"
-                    className="relative rounded-3xl shadow-2xl w-full max-w-md object-cover border-4 border-white"
-                  />
-                  {/* Overlay Quote */}
-                  <div className="absolute bottom-6 left-6 right-6 bg-[#2C4A3E]/95 backdrop-blur-sm p-4 rounded-xl border border-[#C9A961]/30">
-                    <Quote className="w-5 h-5 text-[#C9A961] mb-2" />
-                    <p className="text-white text-sm italic leading-relaxed">
-                      "Every heart that seeks truth is a shrine. My mission is to awaken that divine light within."
-                    </p>
-                  </div>
-                </div>
+            {/* Name with Fade In */}
+            <h1 
+              className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fadeInUp"
+              style={{ 
+                fontFamily: 'Crimson Text, serif',
+                textShadow: '0 4px 20px rgba(0,0,0,0.5)'
+              }}
+            >
+              Syed Ishfaq<br/>Mohy Uddin Shah
+            </h1>
+
+            {/* Separator */}
+            <div className="flex items-center justify-center gap-4 mb-8 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+              <Separator className="w-20 bg-[#C9A961]" />
+              <span className="text-xl md:text-2xl text-[#C9A961] font-medium">The Beacon of Fazl</span>
+              <Separator className="w-20 bg-[#C9A961]" />
+            </div>
+
+            {/* Typing Animation for Quotes */}
+            <div className="max-w-4xl mx-auto mb-12 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+              <Quote className="w-12 h-12 text-[#C9A961] mx-auto mb-4 opacity-50" />
+              <div className="text-2xl md:text-4xl lg:text-5xl text-white font-medium leading-relaxed min-h-[120px] md:min-h-[180px]" style={{ fontFamily: 'Crimson Text, serif' }}>
+                <TypeAnimation
+                  sequence={[
+                    'Every heart that seeks truth is a shrine...',
+                    3000,
+                    'My mission is to awaken divine light within...',
+                    3000,
+                    'Spreading ancestral wisdom across continents...',
+                    3000,
+                    'Bridging centuries of spiritual wisdom with today\'s seekers...',
+                    3000,
+                  ]}
+                  wrapper="span"
+                  speed={50}
+                  repeat={Infinity}
+                  style={{ 
+                    display: 'inline-block',
+                    textShadow: '0 2px 15px rgba(0,0,0,0.7)'
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-[#C9A961] hover:bg-[#8B9D83] text-white px-10 py-7 text-lg shadow-2xl hover:scale-105 transition-transform duration-300"
+              >
+                <Link to="/about">
+                  Discover My Journey
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+              <Button 
+                asChild 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-white text-white hover:bg-white hover:text-[#2C4A3E] px-10 py-7 text-lg shadow-2xl backdrop-blur-sm hover:scale-105 transition-transform duration-300"
+              >
+                <Link to="/work">My Global Mission</Link>
+              </Button>
+            </div>
+
+            {/* Location Info */}
+            <div className="animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-4 rounded-full border border-white/20 shadow-2xl">
+                <MapPin className="w-5 h-5 text-[#C9A961]" />
+                <span className="text-white text-sm md:text-base">Darbar-e-Aliya Qadriya Fazliya • Kot Sharif, Pakistan</span>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <button
+          onClick={scrollToContent}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20 text-white hover:text-[#C9A961] transition-colors"
+          aria-label="Scroll to content"
+        >
+          <ChevronDown className="w-10 h-10" />
+        </button>
+
+        {/* Image Indicators */}
+        <div className="absolute bottom-8 right-8 flex gap-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImage(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImage 
+                  ? 'bg-[#C9A961] w-8' 
+                  : 'bg-white/50 hover:bg-white/80'
+              }`}
+              aria-label={`View image ${index + 1}`}
+            />
+          ))}
         </div>
       </section>
 
@@ -358,6 +436,49 @@ const Home = () => {
           </Card>
         </div>
       </section>
+
+      <style jsx>{`
+        @keyframes kenBurns {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 1s ease-in;
+        }
+
+        .animate-fadeInUp {
+          animation: fadeInUp 1s ease-out;
+          animation-fill-mode: both;
+        }
+      `}</style>
     </div>
   );
 };
