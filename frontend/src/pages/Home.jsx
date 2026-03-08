@@ -89,72 +89,57 @@ const Home = () => {
                 alt={image.alt}
                 className="w-full h-full object-cover"
               />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+              {/* Gradient Overlay - Only at bottom to keep faces visible */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
             </div>
           ))}
         </div>
 
-        {/* Content Overlay */}
-        <div className="relative h-full flex items-center justify-center z-10">
+        {/* Content Overlay - Positioned at Bottom to Respect Images */}
+        <div className="relative h-full flex items-end justify-center pb-20 md:pb-24 z-10">
           <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-            {/* Badge */}
-            <div className="mb-8 animate-fadeIn">
-              <Badge className="bg-[#C9A961]/90 backdrop-blur-sm text-white hover:bg-[#C9A961] border-none text-sm md:text-base px-6 py-2 shadow-2xl">
-                Current Sajjada Nasheen • Spiritual Guide
-              </Badge>
-            </div>
-
-            {/* Name with Fade In */}
-            <h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight animate-fadeInUp"
-              style={{ 
-                fontFamily: 'Crimson Text, serif',
-                textShadow: '0 4px 20px rgba(0,0,0,0.5)'
-              }}
-            >
-              Syed Ishfaq<br/>Mohy Uddin Shah
-            </h1>
-
-            {/* Separator */}
-            <div className="flex items-center justify-center gap-4 mb-8 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-              <Separator className="w-20 bg-[#C9A961]" />
-              <span className="text-xl md:text-2xl text-[#C9A961] font-medium">The Beacon of Fazl</span>
-              <Separator className="w-20 bg-[#C9A961]" />
-            </div>
-
-            {/* Typing Animation for Quotes */}
-            <div className="max-w-4xl mx-auto mb-12 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-              <Quote className="w-12 h-12 text-[#C9A961] mx-auto mb-4 opacity-50" />
-              <div className="text-2xl md:text-4xl lg:text-5xl text-white font-medium leading-relaxed min-h-[120px] md:min-h-[180px]" style={{ fontFamily: 'Crimson Text, serif' }}>
+            
+            {/* Typing Animation - Name First, Then Quotes */}
+            <div className="mb-8">
+              <div className="text-white font-bold leading-tight mb-6" style={{ fontFamily: 'Crimson Text, serif' }}>
                 <TypeAnimation
                   sequence={[
+                    // First show the name
+                    '',
+                    500,
+                    'Syed Ishfaq Mohy Uddin Shah',
+                    2000,
+                    // Then show The Beacon subtitle
+                    'Syed Ishfaq Mohy Uddin Shah\nThe Beacon of Fazl',
+                    2500,
+                    // Then cycle through quotes
                     'Every heart that seeks truth is a shrine...',
-                    3000,
+                    3500,
                     'My mission is to awaken divine light within...',
-                    3000,
+                    3500,
                     'Spreading ancestral wisdom across continents...',
-                    3000,
+                    3500,
                     'Bridging centuries of spiritual wisdom with today\'s seekers...',
-                    3000,
+                    3500,
                   ]}
-                  wrapper="span"
+                  wrapper="div"
                   speed={50}
                   repeat={Infinity}
+                  className="text-3xl md:text-5xl lg:text-6xl whitespace-pre-line"
                   style={{ 
-                    display: 'inline-block',
-                    textShadow: '0 2px 15px rgba(0,0,0,0.7)'
+                    textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.8)',
+                    lineHeight: '1.3'
                   }}
                 />
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 justify-center mb-12 animate-fadeInUp" style={{ animationDelay: '0.6s' }}>
+            <div className="flex flex-wrap gap-4 justify-center mb-8">
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-[#C9A961] hover:bg-[#8B9D83] text-white px-10 py-7 text-lg shadow-2xl hover:scale-105 transition-transform duration-300"
+                className="bg-[#C9A961] hover:bg-[#8B9D83] text-white px-8 py-6 text-base shadow-2xl hover:scale-105 transition-transform duration-300"
               >
                 <Link to="/about">
                   Discover My Journey
@@ -165,17 +150,17 @@ const Home = () => {
                 asChild 
                 size="lg" 
                 variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-[#2C4A3E] px-10 py-7 text-lg shadow-2xl backdrop-blur-sm hover:scale-105 transition-transform duration-300"
+                className="border-2 border-white text-white hover:bg-white hover:text-[#2C4A3E] px-8 py-6 text-base shadow-2xl backdrop-blur-sm hover:scale-105 transition-transform duration-300"
               >
                 <Link to="/work">My Global Mission</Link>
               </Button>
             </div>
 
             {/* Location Info */}
-            <div className="animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
-              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-4 rounded-full border border-white/20 shadow-2xl">
-                <MapPin className="w-5 h-5 text-[#C9A961]" />
-                <span className="text-white text-sm md:text-base">Darbar-e-Aliya Qadriya Fazliya • Kot Sharif, Pakistan</span>
+            <div>
+              <div className="inline-flex items-center gap-3 bg-black/50 backdrop-blur-md px-5 py-3 rounded-full border border-white/20 shadow-2xl">
+                <MapPin className="w-4 h-4 text-[#C9A961]" />
+                <span className="text-white text-sm">Darbar-e-Aliya Qadriya Fazliya • Kot Sharif, Pakistan</span>
               </div>
             </div>
           </div>
