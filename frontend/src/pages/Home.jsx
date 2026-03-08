@@ -10,33 +10,39 @@ import { Separator } from '../components/ui/separator';
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
+  // Desktop hero images with corresponding Sufi quotes
   const heroImages = [
     {
-      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/4q2lcewd_1000091055.jpg',
-      alt: 'Spiritual Discourse'
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/r92xfrt7_desktop1%20%281%29.jpg',
+      alt: 'At the Sacred Shrine',
+      quote: 'The true mosque is the purified heart of the believer'
     },
     {
-      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/gb24pnsx_1000084467.jpg',
-      alt: 'In Contemplation'
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/j47owaqw_desktop1%20%282%29.jpg',
+      alt: 'Brotherhood in Faith',
+      quote: 'In unity of hearts lies the strength of spiritual brotherhood'
     },
     {
-      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/kzu3dpcq_1000057012.jpg',
-      alt: 'At Sacred Shrine'
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/l0679uae_desktop1%20%283%29.jpg',
+      alt: 'Spreading the Message',
+      quote: 'Words spoken from the heart reach the hearts of seekers'
     },
     {
-      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/a5hofb96_1000056974.jpg',
-      alt: 'Leading the Community'
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/hnwpan04_desktop1%20%284%29.jpg',
+      alt: 'Service to Community',
+      quote: 'Service to humanity is service to the Divine'
     },
     {
-      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/w320x6hv_1000056933.jpg',
-      alt: 'At Holy Threshold'
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/qxcc00a5_desktop1%20%285%29.jpg',
+      alt: 'Voice of Wisdom',
+      quote: 'Spreading light in every corner, for truth knows no boundaries'
     }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
+    }, 7000); // Change image every 7 seconds (gives time for quote to be read)
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -70,9 +76,9 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-[#FDFCF9]">
-      {/* Stunning Hero Section with Animated Images */}
+      {/* Stunning Hero Section - Desktop Only for now */}
       <section className="relative h-screen overflow-hidden">
-        {/* Animated Image Background with Ken Burns Effect */}
+        {/* Animated Image Background - No Cropping */}
         <div className="absolute inset-0">
           {heroImages.map((image, index) => (
             <div
@@ -80,87 +86,52 @@ const Home = () => {
               className={`absolute inset-0 transition-opacity duration-2000 ${
                 index === currentImage ? 'opacity-100' : 'opacity-0'
               }`}
-              style={{
-                animation: index === currentImage ? 'kenBurns 20s ease-in-out infinite' : 'none'
-              }}
             >
               <img
                 src={image.url}
                 alt={image.alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
+                style={{ objectFit: 'cover' }}
               />
-              {/* Gradient Overlay - Only at bottom to keep faces visible */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              {/* Gradient Overlay - Only at bottom for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
             </div>
           ))}
         </div>
 
-        {/* Content Overlay - Positioned at Bottom to Respect Images */}
-        <div className="relative h-full flex items-end justify-center pb-20 md:pb-24 z-10">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
-            
-            {/* Typing Animation - Name First, Then Quotes */}
+        {/* Content - Only Quote at Bottom */}
+        <div className="relative h-full flex items-end justify-center pb-16 md:pb-20 z-10">
+          <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
+            {/* Quote with Typing Animation */}
             <div className="mb-8">
-              <div className="text-white font-bold leading-tight mb-6" style={{ fontFamily: 'Crimson Text, serif' }}>
+              <div className="text-white font-medium leading-relaxed" style={{ fontFamily: 'Crimson Text, serif' }}>
                 <TypeAnimation
+                  key={currentImage}
                   sequence={[
-                    // First show the name
-                    '',
-                    500,
-                    'Syed Ishfaq Mohy Uddin Shah',
-                    2000,
-                    // Then show The Beacon subtitle
-                    'Syed Ishfaq Mohy Uddin Shah\nThe Beacon of Fazl',
-                    2500,
-                    // Then cycle through quotes
-                    'Every heart that seeks truth is a shrine...',
-                    3500,
-                    'My mission is to awaken divine light within...',
-                    3500,
-                    'Spreading ancestral wisdom across continents...',
-                    3500,
-                    'Bridging centuries of spiritual wisdom with today\'s seekers...',
-                    3500,
+                    heroImages[currentImage].quote,
+                    6000
                   ]}
                   wrapper="div"
                   speed={50}
-                  repeat={Infinity}
-                  className="text-3xl md:text-5xl lg:text-6xl whitespace-pre-line"
+                  className="text-3xl md:text-4xl lg:text-5xl"
                   style={{ 
-                    textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.8)',
-                    lineHeight: '1.3'
+                    textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
+                    minHeight: '120px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                   }}
+                  cursor={false}
                 />
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 justify-center mb-8">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-[#C9A961] hover:bg-[#8B9D83] text-white px-8 py-6 text-base shadow-2xl hover:scale-105 transition-transform duration-300"
-              >
-                <Link to="/about">
-                  Discover My Journey
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Link>
-              </Button>
-              <Button 
-                asChild 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-white text-white hover:bg-white hover:text-[#2C4A3E] px-8 py-6 text-base shadow-2xl backdrop-blur-sm hover:scale-105 transition-transform duration-300"
-              >
-                <Link to="/work">My Global Mission</Link>
-              </Button>
-            </div>
-
-            {/* Location Info */}
+            {/* Simple Name Badge */}
             <div>
-              <div className="inline-flex items-center gap-3 bg-black/50 backdrop-blur-md px-5 py-3 rounded-full border border-white/20 shadow-2xl">
-                <MapPin className="w-4 h-4 text-[#C9A961]" />
-                <span className="text-white text-sm">Darbar-e-Aliya Qadriya Fazliya • Kot Sharif, Pakistan</span>
+              <div className="inline-block bg-black/60 backdrop-blur-md px-8 py-4 rounded-full border border-white/20">
+                <span className="text-white text-lg md:text-xl font-medium" style={{ fontFamily: 'Crimson Text, serif' }}>
+                  Syed Ishfaq Mohy Uddin Shah
+                </span>
               </div>
             </div>
           </div>
@@ -169,26 +140,62 @@ const Home = () => {
         {/* Scroll Indicator */}
         <button
           onClick={scrollToContent}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20 text-white hover:text-[#C9A961] transition-colors"
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-20 text-white/70 hover:text-white transition-colors"
           aria-label="Scroll to content"
         >
-          <ChevronDown className="w-10 h-10" />
+          <ChevronDown className="w-8 h-8" />
         </button>
 
-        {/* Image Indicators */}
-        <div className="absolute bottom-8 right-8 flex gap-2 z-20">
+        {/* Image Navigation Dots */}
+        <div className="absolute bottom-6 right-8 flex gap-2 z-20">
           {heroImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentImage(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`h-2 rounded-full transition-all duration-300 ${
                 index === currentImage 
-                  ? 'bg-[#C9A961] w-8' 
-                  : 'bg-white/50 hover:bg-white/80'
+                  ? 'bg-white w-8' 
+                  : 'bg-white/40 w-2 hover:bg-white/70'
               }`}
               aria-label={`View image ${index + 1}`}
             />
           ))}
+        </div>
+      </section>
+
+      {/* CTA Section - Right After Hero */}
+      <section className="py-16 bg-[#2C4A3E] text-white">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-center md:text-left">
+              <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ fontFamily: 'Crimson Text, serif' }}>
+                Explore My Spiritual Journey
+              </h2>
+              <p className="text-lg text-[#F5F1E8]">
+                Discover the mission, teachings, and global impact
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-[#C9A961] hover:bg-[#8B9D83] text-white px-8 py-6 text-lg shadow-xl"
+              >
+                <Link to="/about">
+                  About Me
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+              <Button 
+                asChild 
+                size="lg" 
+                variant="outline" 
+                className="border-2 border-white text-white hover:bg-white hover:text-[#2C4A3E] px-8 py-6 text-lg"
+              >
+                <Link to="/work">My Work & Impact</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
