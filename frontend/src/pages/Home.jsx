@@ -10,61 +10,81 @@ import { Separator } from '../components/ui/separator';
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
   
-  // Desktop hero images with Sufi quotes
+  // Desktop hero images with titles and subtitles (no typing animation)
   const heroImagesDesktop = [
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/r92xfrt7_desktop1%20%281%29.jpg',
       alt: 'At the Sacred Shrine',
-      quote: 'The wound is the place where the Light enters you'
+      isNameCard: true,
+      title: 'Syed Ishfaq Mohy Uddin Shah',
+      subtitle: 'Sajjada Nasheen'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/j47owaqw_desktop1%20%282%29.jpg',
       alt: 'Brotherhood in Faith',
-      quote: 'What you seek is seeking you'
+      isNameCard: false,
+      title: 'UNITY IN FAITH',
+      subtitle: 'Connecting hearts across continents through spiritual brotherhood'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/l0679uae_desktop1%20%283%29.jpg',
       alt: 'Spreading the Message',
-      quote: 'Let yourself be silently drawn by the pull of what you truly love'
+      isNameCard: false,
+      title: 'SPREADING WISDOM',
+      subtitle: 'Sharing ancestral Sufi teachings with seekers worldwide'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/yn8aas7m_Murshid%20portfolio%20%281%29.jpg',
       alt: 'Spiritual Celebration',
-      quote: 'Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself'
+      isNameCard: false,
+      title: 'GUIDANCE AND STARDOM',
+      subtitle: 'A spiritual leader enlightening seekers from screen to soul'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/qxcc00a5_desktop1%20%285%29.jpg',
       alt: 'Voice of Wisdom',
-      quote: 'Love is the bridge between you and everything'
+      isNameCard: false,
+      title: 'VOICE OF TRADITION',
+      subtitle: 'Bridging ancient Sufi wisdom with modern understanding'
     }
   ];
 
-  // Mobile/Android hero images with same quotes
+  // Mobile/Android hero images with same titles and subtitles
   const heroImagesMobile = [
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/dvuxaclw_android1%20%281%29.jpg',
       alt: 'At the Sacred Shrine',
-      quote: 'The wound is the place where the Light enters you'
+      isNameCard: true,
+      title: 'Syed Ishfaq Mohy Uddin Shah',
+      subtitle: 'Sajjada Nasheen'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/7cxq7px6_android1%20%282%29.jpg',
       alt: 'Brotherhood in Faith',
-      quote: 'What you seek is seeking you'
+      isNameCard: false,
+      title: 'UNITY IN FAITH',
+      subtitle: 'Connecting hearts across continents through spiritual brotherhood'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/4n01qt0x_android1%20%283%29.jpg',
       alt: 'Spreading the Message',
-      quote: 'Let yourself be silently drawn by the pull of what you truly love'
+      isNameCard: false,
+      title: 'SPREADING WISDOM',
+      subtitle: 'Sharing ancestral Sufi teachings with seekers worldwide'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/tn0z0k4i_android1%20%284%29.jpg',
       alt: 'Service to Community',
-      quote: 'Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself'
+      isNameCard: false,
+      title: 'GUIDANCE AND STARDOM',
+      subtitle: 'A spiritual leader enlightening seekers from screen to soul'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/iekyfmyk_android1%20%285%29.jpg',
       alt: 'Voice of Wisdom',
-      quote: 'Love is the bridge between you and everything'
+      isNameCard: false,
+      title: 'VOICE OF TRADITION',
+      subtitle: 'Bridging ancient Sufi wisdom with modern understanding'
     }
   ];
 
@@ -146,29 +166,51 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Content - Quote slightly above bottom for better readability */}
+        {/* Content - Static title/subtitle, no typing animation */}
         <div className="relative h-full flex items-end justify-center pb-24 md:pb-32 z-10">
           <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
-            {/* Quote with Typing Animation - Playfair Display font */}
+            {/* Static Title and Subtitle - Playfair Display font */}
             <div>
-              <div className="text-white font-medium leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
-                <TypeAnimation
-                  key={currentImage}
-                  sequence={[
-                    heroImagesDesktop[currentImage].quote,
-                    6000
-                  ]}
-                  wrapper="div"
-                  speed={50}
-                  className="text-3xl md:text-5xl lg:text-6xl px-4"
-                  style={{ 
-                    textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
-                    fontWeight: 600,
-                    letterSpacing: '0.02em'
-                  }}
-                  cursor={false}
-                />
-              </div>
+              {heroImagesDesktop[currentImage].isNameCard ? (
+                /* First slide - Name Card */
+                <div className="space-y-4">
+                  <h1 className="text-white font-semibold leading-tight text-4xl md:text-6xl lg:text-7xl px-4" 
+                    style={{ 
+                      fontFamily: 'Playfair Display, serif',
+                      textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
+                      letterSpacing: '0.01em'
+                    }}>
+                    {heroImagesDesktop[currentImage].title}
+                  </h1>
+                  <p className="text-[#C9A961] text-xl md:text-3xl font-medium tracking-wide"
+                    style={{ 
+                      fontFamily: 'Playfair Display, serif',
+                      textShadow: '0 2px 15px rgba(0,0,0,0.7)'
+                    }}>
+                    {heroImagesDesktop[currentImage].subtitle}
+                  </p>
+                </div>
+              ) : (
+                /* Other slides - Title & Subtitle */
+                <div className="space-y-4">
+                  <h2 className="text-white font-bold leading-tight text-3xl md:text-5xl lg:text-6xl px-4 tracking-wider" 
+                    style={{ 
+                      fontFamily: 'Playfair Display, serif',
+                      textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
+                      letterSpacing: '0.15em'
+                    }}>
+                    {heroImagesDesktop[currentImage].title}
+                  </h2>
+                  <p className="text-white/90 text-lg md:text-2xl lg:text-3xl font-normal max-w-4xl mx-auto px-4"
+                    style={{ 
+                      fontFamily: 'Lora, serif',
+                      textShadow: '0 2px 15px rgba(0,0,0,0.7)',
+                      fontWeight: 400
+                    }}>
+                    {heroImagesDesktop[currentImage].subtitle}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
