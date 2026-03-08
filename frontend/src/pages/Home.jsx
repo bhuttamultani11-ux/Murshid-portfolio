@@ -120,8 +120,8 @@ const Home = () => {
                 alt={image.alt}
                 className="w-full h-full object-cover object-center"
               />
-              {/* Gradient Overlay - Bottom only */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+              {/* Elegant gradient overlay - centered vignette effect */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
             </div>
           ))}
         </div>
@@ -140,18 +140,18 @@ const Home = () => {
                 alt={image.alt}
                 className="w-full h-full object-cover object-center"
               />
-              {/* Gradient Overlay - Bottom only */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent"></div>
+              {/* Elegant gradient overlay - centered vignette effect */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
             </div>
           ))}
         </div>
 
-        {/* Content - Same for Both Desktop & Mobile */}
-        <div className="relative h-full flex items-end justify-center pb-16 md:pb-20 z-10">
+        {/* Content - Centered elegantly like syednawazish.com */}
+        <div className="relative h-full flex items-center justify-center z-10">
           <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
-            {/* Quote with Typing Animation */}
-            <div className="mb-8">
-              <div className="text-white font-medium leading-relaxed" style={{ fontFamily: 'Crimson Text, serif' }}>
+            {/* Quote with Typing Animation - Playfair Display font */}
+            <div className="mb-10">
+              <div className="text-white font-medium leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
                 <TypeAnimation
                   key={currentImage}
                   sequence={[
@@ -160,23 +160,21 @@ const Home = () => {
                   ]}
                   wrapper="div"
                   speed={50}
-                  className="text-2xl md:text-4xl lg:text-5xl px-4"
+                  className="text-3xl md:text-5xl lg:text-6xl px-4"
                   style={{ 
                     textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
-                    minHeight: '100px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
+                    fontWeight: 600,
+                    letterSpacing: '0.02em'
                   }}
                   cursor={false}
                 />
               </div>
             </div>
 
-            {/* Name Badge */}
+            {/* Name Badge - Playfair Display */}
             <div>
-              <div className="inline-block bg-black/60 backdrop-blur-md px-6 md:px-8 py-3 md:py-4 rounded-full border border-white/20">
-                <span className="text-white text-base md:text-xl font-medium" style={{ fontFamily: 'Crimson Text, serif' }}>
+              <div className="inline-block bg-black/70 backdrop-blur-md px-8 md:px-10 py-4 md:py-5 rounded-full border border-white/30 shadow-2xl">
+                <span className="text-white text-lg md:text-2xl font-medium tracking-wide" style={{ fontFamily: 'Playfair Display, serif' }}>
                   Syed Ishfaq Mohy Uddin Shah
                 </span>
               </div>
@@ -216,7 +214,7 @@ const Home = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-3" style={{ fontFamily: 'Crimson Text, serif' }}>
-                Explore My Spiritual Journey
+                Explore Spiritual Journey
               </h2>
               <p className="text-lg text-[#F5F1E8]">
                 Discover the mission, teachings, and global impact
@@ -239,14 +237,14 @@ const Home = () => {
                 variant="outline" 
                 className="border-2 border-white text-white hover:bg-white hover:text-[#2C4A3E] px-8 py-6 text-lg"
               >
-                <Link to="/work">My Work & Impact</Link>
+                <Link to="/work"> Work & Impact</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Values - My Guiding Principles - Enhanced */}
+      {/* Core Values -  Guiding Principles - Enhanced */}
       <section className="py-20 bg-gradient-to-br from-[#F5F1E8] via-[#FDFCF9] to-[#FAF8F3] relative overflow-hidden">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-5">
@@ -260,7 +258,7 @@ const Home = () => {
               Core Values
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: 'Crimson Text, serif' }}>
-              My Guiding Principles
+               Guiding Principles
             </h2>
             <p className="text-lg text-[#6B6B6B] max-w-2xl mx-auto">
               The values that shape my approach to preserving and sharing our spiritual heritage
@@ -382,7 +380,7 @@ const Home = () => {
           <div className="mt-12 text-center">
             <Button asChild variant="ghost" className="text-[#2C4A3E] hover:bg-[#F5F1E8] text-lg group border-2 border-[#8B9D83] hover:border-[#C9A961] px-8 py-6">
               <Link to="/work">
-                Explore My Global Impact
+                Explore Global Impact
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
