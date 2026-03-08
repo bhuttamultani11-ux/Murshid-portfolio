@@ -146,10 +146,10 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Content - Quote at bottom, no name badge */}
-        <div className="relative h-full flex items-end justify-center pb-16 md:pb-20 z-10">
+        {/* Content - Quote slightly above bottom for better readability */}
+        <div className="relative h-full flex items-end justify-center pb-24 md:pb-32 z-10">
           <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
-            {/* Quote with Typing Animation - Playfair Display font at bottom */}
+            {/* Quote with Typing Animation - Playfair Display font */}
             <div>
               <div className="text-white font-medium leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
                 <TypeAnimation
