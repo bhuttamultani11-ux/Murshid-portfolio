@@ -6,12 +6,13 @@ import { Separator } from './ui/separator';
 const Footer = () => {
   const quickLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Teachings', path: '/teachings' },
-    { name: 'Lineage', path: '/lineage' }
+    { name: 'About Me', path: '/about' },
+    { name: 'My Work & Impact', path: '/work' },
+    { name: 'Teachings', path: '/teachings' }
   ];
 
   const resources = [
+    { name: 'Sacred Lineage', path: '/lineage' },
     { name: 'Literature', path: '/literature' },
     { name: 'Gallery', path: '/gallery' }
   ];
@@ -29,11 +30,12 @@ const Footer = () => {
           {/* About Section */}
           <div className="lg:col-span-2">
             <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Crimson Text, serif' }}>
-              Darbar-e-Aliya Qadriya Fazliya
+              Syed Ishfaq Mohy Uddin Shah
             </h3>
             <p className="text-[#F5F1E8] leading-relaxed mb-6">
-              A sacred center of spiritual guidance and Sufi teachings, led by Syed Ishfaq Mohy Uddin Shah. 
-              Connecting hearts worldwide through love, wisdom, and service to humanity.
+              Current Sajjada Nasheen of Darbar-e-Aliya Qadriya Fazliya, dedicated to spreading 
+              the ancestral teachings of Sufism worldwide. Connecting hearts through love, wisdom, 
+              and service to humanity.
             </p>
             <div className="space-y-3">
               <div className="flex items-start gap-3">

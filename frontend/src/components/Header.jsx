@@ -10,9 +10,10 @@ const Header = () => {
   const navigation = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
+    { name: 'My Work', path: '/work' },
     { name: 'Teachings', path: '/teachings' },
     { name: 'Lineage', path: '/lineage' },
-    { name: 'Literature', path: '/literature' },
+    { name: 'Resources', path: '/literature' },
     { name: 'Gallery', path: '/gallery' }
   ];
 

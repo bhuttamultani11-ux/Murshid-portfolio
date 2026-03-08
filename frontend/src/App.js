@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Work from "./pages/Work";
 import Teachings from "./pages/Teachings";
 import Lineage from "./pages/Lineage";
 import Literature from "./pages/Literature";
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/work" element={<Work />} />
           <Route path="/teachings" element={<Teachings />} />
           <Route path="/lineage" element={<Lineage />} />
           <Route path="/literature" element={<Literature />} />
