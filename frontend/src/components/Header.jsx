@@ -45,6 +45,16 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Darbar e Aliya Button - Prominent */}
+            <Button 
+              asChild
+              className="ml-4 bg-gradient-to-r from-[#C9A961] to-[#8B9D83] hover:from-[#8B9D83] hover:to-[#C9A961] text-white font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <a href="https://www.babarkatbafaiz.com" target="_blank" rel="noopener noreferrer">
+                Darbar e Aliya
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,6 +84,16 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* Darbar e Aliya Button - Mobile */}
+              <Button 
+                asChild
+                className="mt-4 bg-gradient-to-r from-[#C9A961] to-[#8B9D83] hover:from-[#8B9D83] hover:to-[#C9A961] text-white font-semibold py-3 shadow-lg w-full"
+              >
+                <a href="https://www.babarkatbafaiz.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                  Darbar e Aliya
+                </a>
+              </Button>
             </div>
           </div>
         )}
