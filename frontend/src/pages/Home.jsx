@@ -55,7 +55,7 @@ const Home = () => {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/dvuxaclw_android1%20%281%29.jpg',
       alt: 'At the Sacred Shrine',
       isNameCard: true,
-      title: 'Syed Ishfaq Mohy Uddin Shah',
+      title: 'Syed Ashfaq Mohy Uddin Shah',
       subtitle: 'Sajjada Nasheen'
     },
     {
