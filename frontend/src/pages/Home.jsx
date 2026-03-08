@@ -279,6 +279,55 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Biography Preview Section with Quote */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-[#FDFCF9] via-[#F5F1E8] to-[#FAF8F3] relative overflow-hidden">
+        {/* Decorative Background */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-[#C9A961] rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-64 h-64 bg-[#8B9D83] rounded-full filter blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-5xl mx-auto px-6 md:px-12">
+          {/* Quote Icon */}
+          <div className="text-center mb-8">
+            <Quote className="w-16 h-16 text-[#C9A961] mx-auto mb-6 opacity-50" />
+          </div>
+
+          {/* Biography Text */}
+          <div className="text-center mb-10">
+            <p className="text-xl md:text-2xl lg:text-3xl text-[#1A1A1A] leading-relaxed mb-8 font-medium" style={{ fontFamily: 'Playfair Display, serif' }}>
+              "Syed Ishfaq Mohy Uddin Shah carries the profound spiritual legacy of his forefathers. 
+              Raised in a deeply spiritual environment, he dedicates his life to preserving and sharing 
+              the timeless teachings of the Qadriya Fazliya order."
+            </p>
+            
+            <Separator className="bg-[#C9A961] w-24 mx-auto mb-8" />
+            
+            <p className="text-lg md:text-xl text-[#6B6B6B] leading-relaxed max-w-3xl mx-auto mb-8" style={{ fontFamily: 'Lora, serif' }}>
+              Through his travels to the UK, Baghdad Sharif, Iran, Qatar, and Saudi Arabia, he connects 
+              with seekers across the globe, making the wisdom of Sufi masters accessible to a new generation. 
+              His teachings emphasize the timeless relevance of Sufi principles—inner peace, universal love, 
+              and selfless service to humanity.
+            </p>
+          </div>
+
+          {/* Learn More Button */}
+          <div className="text-center">
+            <Button 
+              asChild 
+              size="lg" 
+              className="bg-gradient-to-r from-[#2C4A3E] to-[#8B9D83] hover:from-[#8B9D83] hover:to-[#2C4A3E] text-white px-10 py-7 text-lg shadow-2xl hover:scale-105 transition-all duration-300"
+            >
+              <Link to="/about">
+                LEARN MORE
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+
       {/* Core Values -  Guiding Principles - Enhanced */}
       <section className="py-20 bg-gradient-to-br from-[#F5F1E8] via-[#FDFCF9] to-[#FAF8F3] relative overflow-hidden">
         {/* Animated Background Pattern */}
