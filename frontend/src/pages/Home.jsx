@@ -28,8 +28,8 @@ const Home = () => {
       quote: 'Let yourself be silently drawn by the pull of what you truly love'
     },
     {
-      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/hnwpan04_desktop1%20%284%29.jpg',
-      alt: 'Service to Community',
+      url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/yn8aas7m_Murshid%20portfolio%20%281%29.jpg',
+      alt: 'Spiritual Celebration',
       quote: 'Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself'
     },
     {
