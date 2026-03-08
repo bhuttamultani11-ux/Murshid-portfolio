@@ -246,11 +246,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Global Outreach Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="text-center mb-16">
-            <Badge className="mb-4 bg-[#8B9D83] text-white border-none">
+      {/* Global Outreach Section - Enhanced */}
+      <section className="py-20 bg-gradient-to-br from-[#FAF8F3] via-white to-[#F5F1E8] relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, #8B9D83 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-16 fade-in-up">
+            <Badge className="mb-4 bg-gradient-to-r from-[#8B9D83] to-[#2C4A3E] text-white border-none shadow-lg">
               <Plane className="w-4 h-4 mr-2" />
               Global Mission
             </Badge>
@@ -267,29 +275,41 @@ const Home = () => {
             {globalReach.map((item, index) => {
               const Icon = item.icon;
               return (
-                <Card key={index} className="border-[#8B9D83] border-opacity-30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-white to-[#FAF8F3]">
-                  <CardContent className="pt-8">
+                <Card 
+                  key={index} 
+                  className="relative overflow-hidden border-2 border-[#C9A961] border-opacity-40 hover:border-opacity-100 bg-gradient-to-br from-white via-[#FAF8F3] to-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group"
+                  style={{
+                    background: 'linear-gradient(135deg, #ffffff 0%, #FAF8F3 50%, #F5F1E8 100%)'
+                  }}
+                >
+                  {/* Glowing border effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#C9A961]/20 via-[#8B9D83]/20 to-[#C9A961]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <CardContent className="pt-8 pb-8 relative z-10">
                     <div className="flex gap-6">
-                      <div className="w-16 h-16 bg-[#F5F1E8] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-md">
-                        <Icon className="w-8 h-8 text-[#2C4A3E]" />
+                      <div className="w-20 h-20 bg-gradient-to-br from-[#8B9D83] to-[#2C4A3E] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-10 h-10 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-[#1A1A1A] mb-3" style={{ fontFamily: 'Crimson Text, serif' }}>
+                        <h3 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#2C4A3E] transition-colors" style={{ fontFamily: 'Crimson Text, serif' }}>
                           {item.country}
                         </h3>
-                        <p className="text-[#6B6B6B] leading-relaxed">
+                        <p className="text-[#6B6B6B] leading-relaxed text-base">
                           {item.purpose}
                         </p>
                       </div>
                     </div>
                   </CardContent>
+                  
+                  {/* Bottom accent line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A961] via-[#8B9D83] to-[#C9A961] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                 </Card>
               );
             })}
           </div>
 
           <div className="mt-12 text-center">
-            <Button asChild variant="ghost" className="text-[#2C4A3E] hover:bg-[#F5F1E8] text-lg group">
+            <Button asChild variant="ghost" className="text-[#2C4A3E] hover:bg-[#F5F1E8] text-lg group border-2 border-[#8B9D83] hover:border-[#C9A961] px-8 py-6">
               <Link to="/work">
                 Explore My Global Impact
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -299,10 +319,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="py-20 bg-gradient-to-b from-[#F5F1E8] to-[#FDFCF9]">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <div className="text-center mb-16">
+      {/* Core Values - My Guiding Principles - Enhanced */}
+      <section className="py-20 bg-gradient-to-br from-[#F5F1E8] via-[#FDFCF9] to-[#FAF8F3] relative overflow-hidden">
+        {/* Animated Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-[#C9A961] rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#8B9D83] rounded-full filter blur-3xl"></div>
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-16 fade-in-up">
+            <Badge className="mb-4 bg-gradient-to-r from-[#2C4A3E] to-[#8B9D83] text-white border-none shadow-lg text-base px-6 py-2">
+              Core Values
+            </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: 'Crimson Text, serif' }}>
               My Guiding Principles
             </h2>
@@ -313,17 +342,33 @@ const Home = () => {
 
           <div className="space-y-8">
             {coreValues.map((value, index) => (
-              <div key={index} className="group">
-                <Card className="bg-white border-[#8B9D83] border-opacity-30 hover:shadow-2xl transition-all duration-500">
-                  <CardContent className="pt-8 pb-8">
+              <div key={index} className="group fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <Card className="relative overflow-hidden border-2 bg-white shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                  style={{
+                    borderImage: 'linear-gradient(135deg, #C9A961, #8B9D83, #2C4A3E) 1',
+                    borderImageSlice: 1
+                  }}>
+                  {/* Animated gradient border */}
+                  <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-[#C9A961] via-[#8B9D83] to-[#2C4A3E] opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ 
+                    mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                    maskComposite: 'exclude',
+                    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                    WebkitMaskComposite: 'xor',
+                    padding: '2px'
+                  }}></div>
+                  
+                  {/* Glowing background on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#C9A961]/5 via-[#8B9D83]/5 to-[#2C4A3E]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <CardContent className="pt-8 pb-8 relative z-10">
                     <div className="flex items-start gap-6">
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-[#2C4A3E] rounded-full flex items-center justify-center text-white text-xl font-bold">
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#2C4A3E] to-[#8B9D83] rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                           {index + 1}
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-3" style={{ fontFamily: 'Crimson Text, serif' }}>
+                        <h3 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#2C4A3E] transition-colors" style={{ fontFamily: 'Crimson Text, serif' }}>
                           {value.title}
                         </h3>
                         <p className="text-lg text-[#6B6B6B] leading-relaxed">
@@ -332,6 +377,12 @@ const Home = () => {
                       </div>
                     </div>
                   </CardContent>
+                  
+                  {/* Top accent line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C9A961] via-[#8B9D83] to-[#2C4A3E]"></div>
+                  
+                  {/* Bottom accent line with animation */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#2C4A3E] via-[#8B9D83] to-[#C9A961] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
                 </Card>
               </div>
             ))}
