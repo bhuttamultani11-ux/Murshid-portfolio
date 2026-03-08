@@ -146,11 +146,11 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Content - Centered elegantly like syednawazish.com */}
-        <div className="relative h-full flex items-center justify-center z-10">
+        {/* Content - Quote at bottom, no name badge */}
+        <div className="relative h-full flex items-end justify-center pb-16 md:pb-20 z-10">
           <div className="max-w-5xl mx-auto px-6 md:px-12 text-center">
-            {/* Quote with Typing Animation - Playfair Display font */}
-            <div className="mb-10">
+            {/* Quote with Typing Animation - Playfair Display font at bottom */}
+            <div>
               <div className="text-white font-medium leading-tight" style={{ fontFamily: 'Playfair Display, serif' }}>
                 <TypeAnimation
                   key={currentImage}
@@ -168,15 +168,6 @@ const Home = () => {
                   }}
                   cursor={false}
                 />
-              </div>
-            </div>
-
-            {/* Name Badge - Playfair Display */}
-            <div>
-              <div className="inline-block bg-black/70 backdrop-blur-md px-8 md:px-10 py-4 md:py-5 rounded-full border border-white/30 shadow-2xl">
-                <span className="text-white text-lg md:text-2xl font-medium tracking-wide" style={{ fontFamily: 'Playfair Display, serif' }}>
-                  Syed Ishfaq Mohy Uddin Shah
-                </span>
               </div>
             </div>
           </div>
