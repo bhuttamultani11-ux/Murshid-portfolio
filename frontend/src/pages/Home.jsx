@@ -15,27 +15,27 @@ const Home = () => {
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/r92xfrt7_desktop1%20%281%29.jpg',
       alt: 'At the Sacred Shrine',
-      quote: 'The true mosque is the purified heart of the believer'
+      quote: 'The wound is the place where the Light enters you'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/j47owaqw_desktop1%20%282%29.jpg',
       alt: 'Brotherhood in Faith',
-      quote: 'In unity of hearts lies the strength of spiritual brotherhood'
+      quote: 'What you seek is seeking you'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/l0679uae_desktop1%20%283%29.jpg',
       alt: 'Spreading the Message',
-      quote: 'Words spoken from the heart reach the hearts of seekers'
+      quote: 'Let yourself be silently drawn by the pull of what you truly love'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/hnwpan04_desktop1%20%284%29.jpg',
       alt: 'Service to Community',
-      quote: 'Service to humanity is service to the Divine'
+      quote: 'Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself'
     },
     {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/qxcc00a5_desktop1%20%285%29.jpg',
       alt: 'Voice of Wisdom',
-      quote: 'Spreading light in every corner, for truth knows no boundaries'
+      quote: 'Love is the bridge between you and everything'
     }
   ];
 
