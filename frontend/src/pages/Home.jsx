@@ -168,24 +168,22 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Content - Title and subtitle on ONE line, different colors */}
-        <div className="relative h-full flex items-end justify-center pb-32 md:pb-32 z-10">
-          <div className="max-w-6xl mx-auto px-6 md:px-12 text-center">
-            {/* Static Title and Subtitle on ONE LINE - Playfair Display font */}
+        {/* FIXED HERO SECTION - Content properly visible on mobile without cutting */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 pb-6 md:pb-16 lg:pb-24 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+          <div className="max-w-6xl mx-auto px-4 md:px-12 text-center">
+            {/* Static Title and Subtitle */}
             <div>
               {heroImagesDesktop[currentImage].isNameCard ? (
-                /* First slide - Name Card on one line */
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 flex-wrap">
-                  <h1 className="text-white font-semibold leading-tight text-3xl md:text-5xl lg:text-6xl" 
+                /* First slide - Name Card */
+                <div className="flex flex-col items-center justify-center gap-0 md:gap-1">
+                  <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-center leading-tight" 
                     style={{ 
                       fontFamily: 'Playfair Display, serif',
-                      textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
-                      letterSpacing: '0.01em'
+                      textShadow: '0 4px 30px rgba(0,0,0,0.9)'
                     }}>
                     {heroImagesDesktop[currentImage].title}
                   </h1>
-                  <span className="hidden sm:inline text-[#C9A961] text-3xl md:text-5xl font-light">|</span>
-                  <p className="text-[#C9A961] text-2xl md:text-4xl lg:text-5xl font-medium"
+                  <p className="text-[#C9A961] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-medium text-center"
                     style={{ 
                       fontFamily: 'Playfair Display, serif',
                       textShadow: '0 2px 15px rgba(0,0,0,0.7)'
@@ -194,22 +192,20 @@ const Home = () => {
                   </p>
                 </div>
               ) : (
-                /* Other slides - Title & Subtitle on ONE LINE */
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 flex-wrap px-4">
-                  <h2 className="text-white font-bold leading-tight text-2xl md:text-4xl lg:text-5xl tracking-widest" 
+                /* Other slides - Title & Subtitle */
+                <div className="flex flex-col items-center justify-center gap-0 md:gap-1">
+                  <h2 className="text-white font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl tracking-widest text-center leading-tight" 
                     style={{ 
                       fontFamily: 'Playfair Display, serif',
-                      textShadow: '0 4px 30px rgba(0,0,0,0.9), 0 2px 15px rgba(0,0,0,0.8)',
+                      textShadow: '0 4px 30px rgba(0,0,0,0.9)',
                       letterSpacing: '0.15em'
                     }}>
                     {heroImagesDesktop[currentImage].title}
                   </h2>
-                  <span className="hidden sm:inline text-white/50 text-2xl md:text-4xl font-light">•</span>
-                  <p className="text-[#C9A961] text-base md:text-xl lg:text-2xl font-normal"
+                  <p className="text-[#C9A961] text-sm sm:text-base md:text-xl lg:text-2xl font-normal text-center max-w-[95%] md:max-w-none mx-auto px-2"
                     style={{ 
                       fontFamily: 'Lora, serif',
-                      textShadow: '0 2px 15px rgba(0,0,0,0.7)',
-                      fontWeight: 400
+                      textShadow: '0 2px 15px rgba(0,0,0,0.7)'
                     }}>
                     {heroImagesDesktop[currentImage].subtitle}
                   </p>
