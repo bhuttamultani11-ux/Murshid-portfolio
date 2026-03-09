@@ -1,0 +1,7 @@
+{
+  "buildCommand": "craco build",
+  "outputDirectory": "build",
+  "devCommand": "craco start",
+  "installCommand": "npm install",
+  "framework": null
+}
