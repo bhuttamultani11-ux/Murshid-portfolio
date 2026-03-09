@@ -168,44 +168,44 @@ const Home = () => {
           ))}
         </div>
 
-        {/* FIXED HERO SECTION - Content properly visible on mobile without cutting */}
-        <div className="absolute bottom-0 left-0 right-0 z-10 pb-6 md:pb-16 lg:pb-24 bg-gradient-to-t from-black/70 via-transparent to-transparent">
-          <div className="max-w-6xl mx-auto px-4 md:px-12 text-center">
+        {/* FINAL FIX - Content perfectly visible without scrolling */}
+        <div className="absolute bottom-0 left-0 right-0 z-10 pb-2 md:pb-8 lg:pb-12 bg-gradient-to-t from-black/40 via-transparent to-transparent">
+          <div className="max-w-6xl mx-auto px-3 md:px-12 text-center">
             {/* Static Title and Subtitle */}
             <div>
               {heroImagesDesktop[currentImage].isNameCard ? (
                 /* First slide - Name Card */
-                <div className="flex flex-col items-center justify-center gap-0 md:gap-1">
-                  <h1 className="text-white font-semibold text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-center leading-tight" 
+                <div className="flex flex-col items-center justify-center gap-0">
+                  <h1 className="text-white font-semibold text-xl sm:text-2xl md:text-5xl lg:text-6xl text-center leading-tight" 
                     style={{ 
                       fontFamily: 'Playfair Display, serif',
-                      textShadow: '0 4px 30px rgba(0,0,0,0.9)'
+                      textShadow: '0 2px 8px rgba(0,0,0,0.8)'
                     }}>
                     {heroImagesDesktop[currentImage].title}
                   </h1>
-                  <p className="text-[#C9A961] text-xl sm:text-2xl md:text-4xl lg:text-5xl font-medium text-center"
+                  <p className="text-[#C9A961] text-lg sm:text-xl md:text-4xl lg:text-5xl font-medium text-center"
                     style={{ 
                       fontFamily: 'Playfair Display, serif',
-                      textShadow: '0 2px 15px rgba(0,0,0,0.7)'
+                      textShadow: '0 2px 8px rgba(0,0,0,0.7)'
                     }}>
                     {heroImagesDesktop[currentImage].subtitle}
                   </p>
                 </div>
               ) : (
                 /* Other slides - Title & Subtitle */
-                <div className="flex flex-col items-center justify-center gap-0 md:gap-1">
-                  <h2 className="text-white font-bold text-xl sm:text-2xl md:text-4xl lg:text-5xl tracking-widest text-center leading-tight" 
+                <div className="flex flex-col items-center justify-center gap-0">
+                  <h2 className="text-white font-bold text-lg sm:text-xl md:text-4xl lg:text-5xl tracking-widest text-center leading-tight px-2" 
                     style={{ 
                       fontFamily: 'Playfair Display, serif',
-                      textShadow: '0 4px 30px rgba(0,0,0,0.9)',
-                      letterSpacing: '0.15em'
+                      textShadow: '0 2px 8px rgba(0,0,0,0.8)',
+                      letterSpacing: '0.1em'
                     }}>
                     {heroImagesDesktop[currentImage].title}
                   </h2>
-                  <p className="text-[#C9A961] text-sm sm:text-base md:text-xl lg:text-2xl font-normal text-center max-w-[95%] md:max-w-none mx-auto px-2"
+                  <p className="text-[#C9A961] text-xs sm:text-sm md:text-xl lg:text-2xl font-normal text-center max-w-[98%] mx-auto px-1 leading-tight"
                     style={{ 
                       fontFamily: 'Lora, serif',
-                      textShadow: '0 2px 15px rgba(0,0,0,0.7)'
+                      textShadow: '0 1px 4px rgba(0,0,0,0.7)'
                     }}>
                     {heroImagesDesktop[currentImage].subtitle}
                   </p>
