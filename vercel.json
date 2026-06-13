@@ -1,8 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "cd frontend && yarn build",
+  "buildCommand": "cd frontend && corepack enable && yarn build",
   "devCommand": "cd frontend && yarn start",
-  "installCommand": "cd frontend && yarn install",
+  "installCommand": "cd frontend && corepack enable && yarn install --frozen-lockfile",
   "framework": null,
-  "outputDirectory": "frontend/build"
+  "outputDirectory": "frontend/build",
+  "env": {
+    "YARN_ENABLE_IMMUTABLE_INSTALLS": "false"
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
