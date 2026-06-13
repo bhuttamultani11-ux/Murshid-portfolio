@@ -3,6 +3,7 @@ import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import PWAInstallPrompt from "./components/PWAInstallPrompt";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Work from "./pages/Work";
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
+        <PWAInstallPrompt />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
