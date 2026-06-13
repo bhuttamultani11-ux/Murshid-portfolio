@@ -112,3 +112,209 @@
 .bg-sage-gradient {
   background: linear-gradient(135deg, #F5F1E8 0%, #8B9D83 50%, #2C4A3E 100%);
 }
+
+/* ========================================
+   HERO SECTION ENHANCEMENTS
+   ======================================== */
+
+/* Ken Burns Zoom Effect - Slow zoom in */
+@keyframes kenBurnsZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.ken-burns-effect {
+  animation: kenBurnsZoom 20s ease-in-out infinite alternate;
+}
+
+/* Text Shimmer/Glow Effect */
+@keyframes textShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(201, 169, 97, 1) 50%,
+    rgba(255, 255, 255, 1) 75%,
+    rgba(255, 255, 255, 0.8) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+}
+
+.text-gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(201, 169, 97, 0.7) 0%,
+    rgba(201, 169, 97, 1) 25%,
+    rgba(255, 215, 0, 1) 50%,
+    rgba(201, 169, 97, 1) 75%,
+    rgba(201, 169, 97, 0.7) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 3s linear infinite;
+}
+
+/* Text Glow Effect */
+.text-glow {
+  text-shadow: 
+    0 0 10px rgba(201, 169, 97, 0.8),
+    0 0 20px rgba(201, 169, 97, 0.6),
+    0 0 30px rgba(201, 169, 97, 0.4),
+    0 4px 30px rgba(0,0,0,0.9);
+}
+
+/* Floating Particles */
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px) scale(0);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(201, 169, 97, 0.8) 0%, rgba(201, 169, 97, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatParticle 15s linear infinite;
+}
+
+/* Stagger particle animations */
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+.particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 15s; }
+.particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 13s; }
+.particle:nth-child(4) { left: 40%; animation-delay: 1s; animation-duration: 14s; }
+.particle:nth-child(5) { left: 50%; animation-delay: 3s; animation-duration: 16s; }
+.particle:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 12s; }
+.particle:nth-child(7) { left: 70%; animation-delay: 2.5s; animation-duration: 15s; }
+.particle:nth-child(8) { left: 80%; animation-delay: 4.5s; animation-duration: 13s; }
+.particle:nth-child(9) { left: 90%; animation-delay: 1.5s; animation-duration: 14s; }
+.particle:nth-child(10) { left: 15%; animation-delay: 3.5s; animation-duration: 16s; }
+
+/* Scroll Indicator Animation */
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+
+.scroll-indicator {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* Islamic Pattern Overlay Animation */
+@keyframes patternRotate {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.03;
+  }
+  50% {
+    opacity: 0.05;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.03;
+  }
+}
+
+.islamic-pattern-overlay {
+  animation: patternRotate 120s linear infinite;
+}
+
+/* Gradient Overlay Animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-overlay {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(44, 74, 62, 0.3),
+    rgba(201, 169, 97, 0.2),
+    rgba(0, 0, 0, 0.5)
+  );
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+}
+
+/* Fade in animation for text */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in-scale {
+  animation: fadeInScale 1s ease-out;
+}
+
+/* Reduce animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns-effect,
+  .text-shimmer,
+  .text-gold-shimmer,
+  .particle,
+  .scroll-indicator,
+  .islamic-pattern-overlay,
+  .animated-gradient-overlay,
+  .fade-in-scale {
+    animation: none !important;
+  }
+  
+  .text-shimmer,
+  .text-gold-shimmer {
+    background: linear-gradient(90deg, #fff 0%, #C9A961 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}

@@ -55,7 +55,7 @@ const Home = () => {
       url: 'https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/dvuxaclw_android1%20%281%29.jpg',
       alt: 'At the Sacred Shrine',
       isNameCard: true,
-      title: 'Syed Ashfaq Mohy Uddin Shah',
+      title: 'Syed Ishfaq Mohy Uddin Shah',
       subtitle: 'Sajjada Nasheen'
     },
     {
@@ -124,9 +124,30 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-[#FDFCF9]">
-      {/* Stunning Hero Section - Responsive Desktop & Mobile */}
+      {/* Enhanced Hero Section - Professional, Animated, Mobile Optimized */}
       <section className="relative h-screen overflow-hidden">
-        {/* Desktop Images - Hidden on Mobile */}
+        {/* Floating Particles - Lightweight performance */}
+        <div className="absolute inset-0 pointer-events-none z-20 hidden md:block">
+          {[...Array(10)].map((_, i) => (
+            <div key={i} className="particle" />
+          ))}
+        </div>
+
+        {/* Islamic Geometric Pattern Overlay - Subtle, rotating */}
+        <div className="absolute inset-0 z-10 pointer-events-none islamic-pattern-overlay opacity-20">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="islamic-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M50 0 L75 25 L50 50 L25 25 Z" fill="none" stroke="rgba(201, 169, 97, 0.3)" strokeWidth="0.5"/>
+                <circle cx="50" cy="25" r="3" fill="rgba(201, 169, 97, 0.2)"/>
+                <path d="M50 50 L50 0 M25 25 L75 25" stroke="rgba(139, 157, 131, 0.2)" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#islamic-pattern)" />
+          </svg>
+        </div>
+
+        {/* Desktop Images - Hidden on Mobile - WITH KEN BURNS EFFECT */}
         <div className="absolute inset-0 hidden md:block">
           {heroImagesDesktop.map((image, index) => (
             <div
@@ -138,11 +159,11 @@ const Home = () => {
               <img
                 src={image.url}
                 alt={image.alt}
-                className="w-full h-full object-cover object-[center_20%]"
+                className="w-full h-full object-cover object-[center_20%] ken-burns-effect"
                 style={{ objectPosition: 'center 20%' }}
               />
-              {/* Elegant gradient overlay - centered vignette effect */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70"></div>
+              {/* Animated gradient overlay with flow effect */}
+              <div className="absolute inset-0 animated-gradient-overlay"></div>
             </div>
           ))}
         </div>
