@@ -318,3 +318,275 @@
     background-clip: text;
   }
 }
+
+/* ========================================
+   SECTIONS 2-6: COMPREHENSIVE ENHANCEMENTS
+   ======================================== */
+
+/* === SECTION 2: TYPOGRAPHY & TEXT EFFECTS === */
+
+/* Gradient Text for Headings */
+.gradient-text-gold {
+  background: linear-gradient(135deg, #C9A961 0%, #FFD700 50%, #C9A961 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-sage {
+  background: linear-gradient(135deg, #2C4A3E 0%, #8B9D83 50%, #2C4A3E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Scroll-triggered Fade In Up */
+@keyframes fadeInUpScroll {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-fade-in {
+  animation: fadeInUpScroll 0.8s ease-out;
+}
+
+/* === SECTION 3: COLOR PALETTE & VISUAL RICHNESS === */
+
+/* Enhanced Shadows with Color */
+.shadow-gold {
+  box-shadow: 0 4px 20px rgba(201, 169, 97, 0.15), 0 2px 10px rgba(201, 169, 97, 0.1);
+}
+
+.shadow-gold-lg {
+  box-shadow: 0 10px 40px rgba(201, 169, 97, 0.2), 0 4px 20px rgba(201, 169, 97, 0.15);
+}
+
+.shadow-sage {
+  box-shadow: 0 4px 20px rgba(139, 157, 131, 0.15), 0 2px 10px rgba(139, 157, 131, 0.1);
+}
+
+/* === SECTION 4: ISLAMIC/SUFI AESTHETIC ELEMENTS === */
+
+/* Islamic Geometric Divider */
+.islamic-divider {
+  position: relative;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.islamic-divider::before,
+.islamic-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201, 169, 97, 0.3), transparent);
+}
+
+.islamic-divider-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 20px;
+  opacity: 0.6;
+}
+
+/* Ornate Corner Decorations */
+.ornate-corners {
+  position: relative;
+}
+
+.ornate-corners::before,
+.ornate-corners::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(201, 169, 97, 0.3);
+}
+
+.ornate-corners::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.ornate-corners::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+/* === SECTION 5: ANIMATIONS & MICRO-INTERACTIONS === */
+
+/* Card Hover with Golden Glow */
+@keyframes cardGlowHover {
+  0% {
+    box-shadow: 0 4px 20px rgba(201, 169, 97, 0.15);
+    transform: translateY(0);
+  }
+  100% {
+    box-shadow: 0 12px 40px rgba(201, 169, 97, 0.3), 0 0 20px rgba(201, 169, 97, 0.2);
+    transform: translateY(-5px);
+  }
+}
+
+.card-hover-glow {
+  transition: all 0.3s ease;
+}
+
+.card-hover-glow:hover {
+  animation: cardGlowHover 0.3s ease forwards;
+}
+
+/* Button Ripple Effect */
+@keyframes buttonRipple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+}
+
+.btn-ripple:active::after {
+  animation: buttonRipple 0.6s ease-out;
+}
+
+/* Icon Animations */
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.icon-hover:hover {
+  animation: iconPulse 0.5s ease;
+}
+
+/* === SECTION 6: NAVIGATION & HEADER === */
+
+/* Glass Morphism Header */
+.glass-header {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-header-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Navigation Link Underline Animation */
+.nav-link-underline {
+  position: relative;
+}
+
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #C9A961, #FFD700);
+  transition: width 0.3s ease;
+}
+
+.nav-link-underline:hover::after {
+  width: 100%;
+}
+
+/* Logo Glow Effect */
+@keyframes logoGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(201, 169, 97, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(201, 169, 97, 0.5));
+  }
+}
+
+.logo-glow {
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+/* Mobile Menu Overlay */
+@keyframes menuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu-item {
+  animation: menuSlideIn 0.3s ease-out;
+}
+
+.mobile-menu-item:nth-child(1) { animation-delay: 0.05s; }
+.mobile-menu-item:nth-child(2) { animation-delay: 0.1s; }
+.mobile-menu-item:nth-child(3) { animation-delay: 0.15s; }
+.mobile-menu-item:nth-child(4) { animation-delay: 0.2s; }
+.mobile-menu-item:nth-child(5) { animation-delay: 0.25s; }
+.mobile-menu-item:nth-child(6) { animation-delay: 0.3s; }
+.mobile-menu-item:nth-child(7) { animation-delay: 0.35s; }
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-fade-in,
+  .card-hover-glow,
+  .btn-ripple::after,
+  .icon-hover:hover,
+  .logo-glow,
+  .mobile-menu-item {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .nav-link-underline::after {
+    transition: none !important;
+  }
+}
