@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Work from "./pages/Work";
 import Teachings from "./pages/Teachings";
 import Lineage from "./pages/Lineage";
+import LineageComplete from "./pages/LineageComplete";
 import Literature from "./pages/Literature";
 import Gallery from "./pages/Gallery";
 
