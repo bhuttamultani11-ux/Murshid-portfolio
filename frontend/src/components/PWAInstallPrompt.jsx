@@ -97,21 +97,20 @@ const PWAInstallPrompt = () => {
           </div>
 
           {/* Buttons */}
-          <div className="flex gap-3">
+          <div className="space-y-3">
             <Button 
               onClick={handleInstall}
-              className="flex-1 bg-gradient-to-r from-[#C9A961] to-[#8B9D83] hover:from-[#8B9D83] hover:to-[#2C4A3E] text-white font-semibold py-6 text-base"
+              className="w-full bg-gradient-to-r from-[#C9A961] to-[#8B9D83] hover:from-[#8B9D83] hover:to-[#2C4A3E] text-white font-semibold py-6 text-base shadow-lg"
             >
               <Download className="w-5 h-5 mr-2" />
               Install Now
             </Button>
-            <Button 
+            <button 
               onClick={handleDismiss}
-              variant="outline"
-              className="border-2 border-[#8B9D83] text-[#2C4A3E] hover:bg-[#F5F1E8] py-6 px-6"
+              className="w-full text-sm text-[#6B6B6B] hover:text-[#2C4A3E] py-2 transition-colors"
             >
-              Maybe Later
-            </Button>
+              Not now
+            </button>
           </div>
         </div>
       </div>

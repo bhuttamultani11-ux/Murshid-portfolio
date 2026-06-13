@@ -228,8 +228,8 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Content - Title and subtitle on ONE line, different colors */}
-        <div className="relative h-full flex items-end justify-center pb-16 md:pb-32 z-10">
+        {/* Content - Title and subtitle CENTERED in hero */}
+        <div className="relative h-full flex items-center justify-center z-10">
           <div className="max-w-6xl mx-auto px-4 md:px-12 text-center">
             {/* Static Title and Subtitle on ONE LINE - Playfair Display font */}
             <div>
