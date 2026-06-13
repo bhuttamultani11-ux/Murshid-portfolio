@@ -37,7 +37,7 @@ const LineageComplete = () => {
 
       {/* Main Lineage Content */}
       <section className="py-16 md:py-20 px-6 md:px-12">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Top Name - HAZRAT ABDUL MUTTALIB */}
           <div className="text-center mb-8">
             <div className="inline-block bg-gradient-to-r from-[#C9A961] to-[#8B9D83] px-12 py-6 rounded-2xl shadow-gold-lg">
@@ -60,7 +60,15 @@ const LineageComplete = () => {
                 src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/txwl2y50_Screenshot%20%282173%29.png"
                 alt="Sacred Lineage Part 1 - Numbers 81 to 107"
                 className="w-full h-auto"
-                loading="lazy"
+                style={{
+                  imageRendering: '-webkit-optimize-contrast',
+                  maxWidth: '100%',
+                  height: 'auto',
+                  display: 'block',
+                }}
+                loading="eager"
+                fetchpriority="high"
+                decoding="sync"
               />
             </div>
           </div>
@@ -77,7 +85,15 @@ const LineageComplete = () => {
                 src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/v6b8ox8j_Screenshot%20%282174%29.png"
                 alt="Sacred Lineage Part 2 - Numbers 108 to 131"
                 className="w-full h-auto"
-                loading="lazy"
+                style={{
+                  imageRendering: '-webkit-optimize-contrast',
+                  maxWidth: '100%',
+                  height: 'auto',
+                  display: 'block',
+                }}
+                loading="eager"
+                fetchpriority="high"
+                decoding="sync"
               />
             </div>
           </div>
