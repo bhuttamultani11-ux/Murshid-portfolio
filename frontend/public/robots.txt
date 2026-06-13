@@ -1,0 +1,19 @@
+# robots.txt for Darbar-e-Aliya Qadriya Barakatiya
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /work
+Allow: /teachings
+Allow: /lineage
+Allow: /literature
+Allow: /gallery
+Allow: /privacy-policy
+Allow: /terms
+Allow: /contact
+Allow: /disclaimer
+
+# Sitemap location
+Sitemap: https://qadriya-hub.preview.emergentagent.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

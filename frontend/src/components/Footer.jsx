@@ -14,7 +14,14 @@ const Footer = () => {
   const resources = [
     { name: 'Sacred Lineage', path: '/lineage' },
     { name: 'Literature', path: '/literature' },
-    { name: 'Gallery', path: '/gallery' }
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Contact Us', path: '/contact' }
+  ];
+
+  const legal = [
+    { name: 'Privacy Policy', path: '/privacy-policy' },
+    { name: 'Terms & Conditions', path: '/terms' },
+    { name: 'Disclaimer', path: '/disclaimer' }
   ];
 
   const socialLinks = [
@@ -95,6 +102,20 @@ const Footer = () => {
             <p className="text-sm">
               Preserving spiritual heritage and guiding seekers on the path of love.
             </p>
+            {/* Legal Links */}
+            <div className="flex flex-wrap gap-3 mt-3 justify-center md:justify-start">
+              {legal.map((link, index) => (
+                <React.Fragment key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-[#C9A961] hover:text-[#FFD700] transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                  {index < legal.length - 1 && <span className="text-[#8B9D83]">|</span>}
+                </React.Fragment>
+              ))}
+            </div>
           </div>
 
           {/* Social Links */}
