@@ -175,7 +175,178 @@ const About = () => {
         </div>
       </section>
 
-      {/* Family - Continuing the Sacred Lineage */}
+      {/* Sacred Lineage Hierarchy - Father and Ancestors */}
+      <section className="py-20 md:py-28 bg-gradient-to-br from-[#FDFCF9] via-[#F5F1E8] to-[#FAF8F3] relative overflow-hidden">
+        {/* Islamic Pattern Background */}
+        <div className="absolute inset-0 opacity-5">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="lineage-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <circle cx="50" cy="50" r="30" fill="none" stroke="#C9A961" strokeWidth="0.5"/>
+                <circle cx="50" cy="50" r="20" fill="none" stroke="#8B9D83" strokeWidth="0.5"/>
+                <circle cx="50" cy="50" r="10" fill="none" stroke="#2C4A3E" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#lineage-pattern)" />
+          </svg>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-gradient-to-r from-[#C9A961] to-[#8B9D83] text-white border-none shadow-lg text-base px-6 py-2">
+              ☪️ Golden Chain of Succession
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text-gold" style={{ fontFamily: 'Playfair Display, serif' }}>
+              The Sacred Lineage
+            </h2>
+            <p className="text-xl text-[#6B6B6B] max-w-3xl mx-auto">
+              The unbroken spiritual chain (Silsila) of the Qadriya order, passed down through generations of blessed saints
+            </p>
+          </div>
+
+          {/* Lineage Hierarchy - Vertical Flow */}
+          <div className="max-w-4xl mx-auto space-y-12">
+            
+            {/* Great Ancestors - Side by Side */}
+            <div className="text-center mb-16">
+              <h3 className="text-2xl font-bold text-[#2C4A3E] mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
+                🕌 Blessed Ancestors
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Peer Syed Barkat Ali Shah Sahb */}
+                <div className="group">
+                  <Card className="ornate-corners overflow-hidden shadow-gold-lg hover:shadow-gold transition-all duration-500">
+                    <div className="relative">
+                      <div className="w-full h-64 bg-gradient-to-br from-[#C9A961]/20 to-[#8B9D83]/20 flex items-center justify-center">
+                        <div className="text-center p-8">
+                          <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-[#C9A961] to-[#8B9D83] rounded-full flex items-center justify-center">
+                            <span className="text-5xl">🌟</span>
+                          </div>
+                          <div className="text-sm text-[#8B9D83] font-medium mb-2">Image placeholder</div>
+                        </div>
+                      </div>
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
+                        <span className="text-sm font-bold text-[#C9A961]">Ancestor</span>
+                      </div>
+                    </div>
+                    <CardContent className="p-6 text-center">
+                      <h3 className="text-2xl font-bold text-[#2C4A3E] mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+                        Peer Syed Barkat Ali Shah
+                      </h3>
+                      <p className="text-sm text-[#C9A961] font-semibold mb-3">(Rahmatullah Alayh)</p>
+                      <p className="text-base text-[#6B6B6B] leading-relaxed">
+                        A luminary of the Qadriya Silsila whose spiritual wisdom and divine blessings continue to illuminate seekers' hearts across generations.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Peer Syed Faiz Mohy Uddin Shah Sahb */}
+                <div className="group">
+                  <Card className="ornate-corners overflow-hidden shadow-gold-lg hover:shadow-gold transition-all duration-500">
+                    <div className="relative">
+                      <div className="w-full h-64 bg-gradient-to-br from-[#8B9D83]/20 to-[#2C4A3E]/20 flex items-center justify-center">
+                        <div className="text-center p-8">
+                          <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-[#8B9D83] to-[#2C4A3E] rounded-full flex items-center justify-center">
+                            <span className="text-5xl">🌟</span>
+                          </div>
+                          <div className="text-sm text-[#8B9D83] font-medium mb-2">Image placeholder</div>
+                        </div>
+                      </div>
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
+                        <span className="text-sm font-bold text-[#C9A961]">Ancestor</span>
+                      </div>
+                    </div>
+                    <CardContent className="p-6 text-center">
+                      <h3 className="text-2xl font-bold text-[#2C4A3E] mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+                        Peer Syed Faiz Mohy Uddin Shah
+                      </h3>
+                      <p className="text-sm text-[#C9A961] font-semibold mb-3">(Rahmatullah Alayh)</p>
+                      <p className="text-base text-[#6B6B6B] leading-relaxed">
+                        A revered spiritual guide whose teachings of divine love and enlightenment have guided countless souls on the path of righteousness.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+            </div>
+
+            {/* Connection Line */}
+            <div className="flex justify-center">
+              <div className="w-1 h-16 bg-gradient-to-b from-[#C9A961] to-[#8B9D83]"></div>
+            </div>
+
+            {/* Father - Syed Nazar Mohy Uddin Shah Sahb */}
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-[#2C4A3E] mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
+                👑 Beloved Father & Spiritual Guide
+              </h3>
+              <div className="max-w-2xl mx-auto">
+                <Card className="ornate-corners overflow-hidden shadow-gold-lg hover:shadow-gold transition-all duration-500">
+                  <div className="relative">
+                    <div className="w-full h-96 bg-gradient-to-br from-[#2C4A3E]/30 via-[#C9A961]/20 to-[#8B9D83]/30 flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <div className="w-48 h-48 mx-auto mb-6 bg-gradient-to-br from-[#C9A961] via-[#8B9D83] to-[#2C4A3E] rounded-full flex items-center justify-center shadow-2xl logo-glow">
+                          <span className="text-7xl">👤</span>
+                        </div>
+                        <div className="text-base text-[#2C4A3E] font-semibold mb-2">Image placeholder</div>
+                        <div className="text-sm text-[#8B9D83]">Awaiting blessed photograph</div>
+                      </div>
+                    </div>
+                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#C9A961] to-[#8B9D83] text-white rounded-full px-6 py-3 shadow-lg">
+                      <span className="text-base font-bold">Father & Predecessor</span>
+                    </div>
+                  </div>
+                  <CardContent className="p-8 text-center bg-gradient-to-b from-white to-[#F5F1E8]/50">
+                    <h3 className="text-3xl md:text-4xl font-bold text-[#2C4A3E] mb-3 gradient-text-sage" style={{ fontFamily: 'Playfair Display, serif' }}>
+                      Syed Nazar Mohy Uddin Shah Sahb
+                    </h3>
+                    <p className="text-lg text-[#C9A961] font-bold mb-4">(Rahmatullah Alayh)</p>
+                    <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#C9A961] to-transparent mx-auto mb-6"></div>
+                    <p className="text-lg text-[#6B6B6B] leading-relaxed mb-4">
+                      The beloved father and spiritual predecessor, whose divine grace, unwavering devotion, and profound knowledge of the Qadriya path illuminated the way for seekers of truth. His blessed presence continues to inspire through his son's spiritual mission.
+                    </p>
+                    <p className="text-base text-[#2C4A3E] font-medium italic">
+                      "The light of guidance passes from father to son, an unbroken chain of divine wisdom"
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Connection Line */}
+            <div className="flex justify-center">
+              <div className="w-1 h-16 bg-gradient-to-b from-[#8B9D83] to-[#2C4A3E]"></div>
+            </div>
+
+            {/* Current Leader */}
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-[#2C4A3E] mb-8" style={{ fontFamily: 'Playfair Display, serif' }}>
+                ✨ Current Sajjada Nasheen
+              </h3>
+              <div className="max-w-xl mx-auto">
+                <Card className="ornate-corners overflow-hidden shadow-gold-lg bg-gradient-to-br from-white to-[#F5F1E8]">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-[#C9A961] to-[#8B9D83] rounded-full flex items-center justify-center shadow-xl logo-glow">
+                      <span className="text-6xl">🌙</span>
+                    </div>
+                    <h3 className="text-3xl font-bold text-[#2C4A3E] mb-3 gradient-text-gold" style={{ fontFamily: 'Playfair Display, serif' }}>
+                      Syed Ishfaq Mohy Uddin Shah
+                    </h3>
+                    <p className="text-lg text-[#C9A961] font-bold mb-4">Sajjada Nasheen of Darbar-e-Aliya</p>
+                    <p className="text-base text-[#6B6B6B] leading-relaxed">
+                      Continuing the blessed mission of spreading divine love, wisdom, and the sacred teachings of the Qadriya Silsila across the world.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Family - Continuing the Sacred Lineage (Sons) */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-[#F5F1E8] via-[#FAF8F3] to-[#F5F1E8] relative overflow-hidden">
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-5">

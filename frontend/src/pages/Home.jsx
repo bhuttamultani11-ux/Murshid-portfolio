@@ -105,16 +105,40 @@ const Home = () => {
 
   const coreValues = [
     {
-      title: 'Living the Legacy',
-      description: 'Carrying forward the profound spiritual wisdom of our blessed ancestors with authenticity and devotion in modern times.'
+      title: 'Living the Sacred Legacy',
+      description: 'Carrying forward the profound spiritual wisdom of Hazrat Ghaus-e-Azam Abdul Qadir Jilani (R.A) and our blessed ancestors with authenticity, devotion, and unwavering commitment to the Qadriya path.',
+      icon: '🕌',
+      verse: '"The best of people are those who bring most benefit to others"'
     },
     {
-      title: 'Universal Love',
-      description: 'Teaching that divine love transcends all boundaries, uniting humanity in compassion and understanding.'
+      title: 'Divine Love & Unity',
+      description: 'Teaching that true divine love (Ishq-e-Ilahi) transcends all boundaries, uniting humanity in compassion, brotherhood, and spiritual understanding. The essence of Sufism is to see the Divine in all creation.',
+      icon: '💚',
+      verse: '"Love is the bridge between you and everything"'
     },
     {
-      title: 'Service to Humanity',
-      description: 'Following the Sufi tradition of selfless service, uplifting communities through spiritual guidance and practical support.'
+      title: 'Selfless Service to Humanity',
+      description: 'Following the Sufi tradition of Khidmat (selfless service), uplifting communities through spiritual guidance, practical support, and unconditional love for all of Allah\'s creation.',
+      icon: '🤲',
+      verse: '"The hands that serve are holier than lips that pray"'
+    },
+    {
+      title: 'Spiritual Purification (Tazkiyah)',
+      description: 'Guiding seekers on the path of self-purification through Dhikr (remembrance of Allah), meditation, and spiritual practices that cleanse the heart and illuminate the soul with divine light.',
+      icon: '✨',
+      verse: '"Cleanse your heart, for it is the mirror of the Divine"'
+    },
+    {
+      title: 'Knowledge & Wisdom (Ilm wa Hikmat)',
+      description: 'Preserving and sharing the sacred knowledge of Islamic teachings, Quranic wisdom, and the spiritual sciences passed down through the golden chain of Qadriya Silsila for over 900 years.',
+      icon: '📿',
+      verse: '"Knowledge is light, and ignorance is darkness"'
+    },
+    {
+      title: 'Universal Peace & Harmony',
+      description: 'Spreading the message of Sulh-e-Kul (universal peace), promoting interfaith dialogue, and building bridges of understanding between all communities while upholding the noble teachings of Islam.',
+      icon: '☪️',
+      verse: '"Peace begins with a smile and resides in the heart"'
     }
   ];
 
@@ -364,11 +388,11 @@ const Home = () => {
             <Badge className="mb-4 bg-gradient-to-r from-[#2C4A3E] to-[#8B9D83] text-white border-none shadow-lg text-base px-6 py-2">
               Core Values
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: 'Crimson Text, serif' }}>
-               Guiding Principles
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4 gradient-text-gold" style={{ fontFamily: 'Crimson Text, serif' }}>
+              Sacred Teachings of the Qadriya Path
             </h2>
-            <p className="text-lg text-[#6B6B6B] max-w-2xl mx-auto">
-              The values that shape my approach to preserving and sharing our spiritual heritage
+            <p className="text-lg text-[#6B6B6B] max-w-3xl mx-auto">
+              Six divine principles guiding our spiritual journey, rooted in the wisdom of Hazrat Ghaus-e-Azam (R.A) and the blessed Qadriya Silsila
             </p>
           </div>
 
@@ -395,17 +419,23 @@ const Home = () => {
                   <CardContent className="pt-8 pb-8 relative z-10">
                     <div className="flex items-start gap-6">
                       <div className="flex-shrink-0">
-                        <div className="w-16 h-16 bg-gradient-to-br from-[#2C4A3E] to-[#8B9D83] rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
-                          {index + 1}
+                        <div className="w-16 h-16 bg-gradient-to-br from-[#2C4A3E] to-[#8B9D83] rounded-full flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+                          {value.icon}
                         </div>
                       </div>
                       <div className="flex-1">
                         <h3 className="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-3 group-hover:text-[#2C4A3E] transition-colors" style={{ fontFamily: 'Crimson Text, serif' }}>
                           {value.title}
                         </h3>
-                        <p className="text-lg text-[#6B6B6B] leading-relaxed">
+                        <p className="text-lg text-[#6B6B6B] leading-relaxed mb-4">
                           {value.description}
                         </p>
+                        {/* Sacred Verse */}
+                        <div className="pt-3 mt-3 border-t border-[#C9A961]/30">
+                          <p className="text-sm italic text-[#C9A961] font-medium" style={{ fontFamily: 'Lora, serif' }}>
+                            {value.verse}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
