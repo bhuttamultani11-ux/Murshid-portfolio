@@ -74,7 +74,7 @@ const PWAInstallPrompt = () => {
         {/* Content */}
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-[#2C4A3E] mb-3" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Install The Beacon of Fazl
+            Install SAJJADA NASHIN
           </h2>
           <p className="text-base text-[#6B6B6B] mb-6 leading-relaxed">
             Get instant access to spiritual teachings, sacred lineage, and blessed gatherings. Install our app for the best experience.
