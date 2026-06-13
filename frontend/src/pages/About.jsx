@@ -217,13 +217,12 @@ const About = () => {
                 <div className="group">
                   <Card className="ornate-corners overflow-hidden shadow-gold-lg hover:shadow-gold transition-all duration-500">
                     <div className="relative">
-                      <div className="w-full h-64 bg-gradient-to-br from-[#C9A961]/20 to-[#8B9D83]/20 flex items-center justify-center">
-                        <div className="text-center p-8">
-                          <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-[#C9A961] to-[#8B9D83] rounded-full flex items-center justify-center">
-                            <span className="text-5xl">🌟</span>
-                          </div>
-                          <div className="text-sm text-[#8B9D83] font-medium mb-2">Image placeholder</div>
-                        </div>
+                      <div className="w-full h-96 overflow-hidden">
+                        <img 
+                          src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/23o1zvs9_peer%20syed%20barkat%20ali%20shah%20sahb.jpeg"
+                          alt="Peer Syed Barkat Ali Shah"
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        />
                       </div>
                       <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
                         <span className="text-sm font-bold text-[#C9A961]">Ancestor</span>
@@ -233,8 +232,7 @@ const About = () => {
                       <h3 className="text-2xl font-bold text-[#2C4A3E] mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
                         Peer Syed Barkat Ali Shah
                       </h3>
-                      <p className="text-sm text-[#C9A961] font-semibold mb-3">(Rahmatullah Alayh)</p>
-                      <p className="text-base text-[#6B6B6B] leading-relaxed">
+                      <p className="text-base text-[#6B6B6B] leading-relaxed mt-4">
                         A luminary of the Qadriya Silsila whose spiritual wisdom and divine blessings continue to illuminate seekers' hearts across generations.
                       </p>
                     </CardContent>
@@ -245,13 +243,12 @@ const About = () => {
                 <div className="group">
                   <Card className="ornate-corners overflow-hidden shadow-gold-lg hover:shadow-gold transition-all duration-500">
                     <div className="relative">
-                      <div className="w-full h-64 bg-gradient-to-br from-[#8B9D83]/20 to-[#2C4A3E]/20 flex items-center justify-center">
-                        <div className="text-center p-8">
-                          <div className="w-32 h-32 mx-auto mb-4 bg-gradient-to-br from-[#8B9D83] to-[#2C4A3E] rounded-full flex items-center justify-center">
-                            <span className="text-5xl">🌟</span>
-                          </div>
-                          <div className="text-sm text-[#8B9D83] font-medium mb-2">Image placeholder</div>
-                        </div>
+                      <div className="w-full h-96 overflow-hidden">
+                        <img 
+                          src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/3o0enxan_peer%20syed%20faiz%20mohy%20uddin%20shah%20sahb.jpeg"
+                          alt="Peer Syed Faiz Mohy Uddin Shah"
+                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        />
                       </div>
                       <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
                         <span className="text-sm font-bold text-[#C9A961]">Ancestor</span>
@@ -261,8 +258,7 @@ const About = () => {
                       <h3 className="text-2xl font-bold text-[#2C4A3E] mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
                         Peer Syed Faiz Mohy Uddin Shah
                       </h3>
-                      <p className="text-sm text-[#C9A961] font-semibold mb-3">(Rahmatullah Alayh)</p>
-                      <p className="text-base text-[#6B6B6B] leading-relaxed">
+                      <p className="text-base text-[#6B6B6B] leading-relaxed mt-4">
                         A revered spiritual guide whose teachings of divine love and enlightenment have guided countless souls on the path of righteousness.
                       </p>
                     </CardContent>
@@ -284,24 +280,18 @@ const About = () => {
               <div className="max-w-2xl mx-auto">
                 <Card className="ornate-corners overflow-hidden shadow-gold-lg hover:shadow-gold transition-all duration-500">
                   <div className="relative">
-                    <div className="w-full h-96 bg-gradient-to-br from-[#2C4A3E]/30 via-[#C9A961]/20 to-[#8B9D83]/30 flex items-center justify-center">
-                      <div className="text-center p-8">
-                        <div className="w-48 h-48 mx-auto mb-6 bg-gradient-to-br from-[#C9A961] via-[#8B9D83] to-[#2C4A3E] rounded-full flex items-center justify-center shadow-2xl logo-glow">
-                          <span className="text-7xl">👤</span>
-                        </div>
-                        <div className="text-base text-[#2C4A3E] font-semibold mb-2">Image placeholder</div>
-                        <div className="text-sm text-[#8B9D83]">Awaiting blessed photograph</div>
-                      </div>
-                    </div>
-                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#C9A961] to-[#8B9D83] text-white rounded-full px-6 py-3 shadow-lg">
-                      <span className="text-base font-bold">Father & Predecessor</span>
+                    <div className="w-full h-96 overflow-hidden">
+                      <img 
+                        src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/rofl19cw_syed%20nazar%20mohy%20uddin%20shah%20sahb.jpeg"
+                        alt="Syed Nazar Mohy Uddin Shah Sahb"
+                        className="w-full h-full object-cover object-center"
+                      />
                     </div>
                   </div>
                   <CardContent className="p-8 text-center bg-gradient-to-b from-white to-[#F5F1E8]/50">
                     <h3 className="text-3xl md:text-4xl font-bold text-[#2C4A3E] mb-3 gradient-text-sage" style={{ fontFamily: 'Playfair Display, serif' }}>
                       Syed Nazar Mohy Uddin Shah Sahb
                     </h3>
-                    <p className="text-lg text-[#C9A961] font-bold mb-4">(Rahmatullah Alayh)</p>
                     <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#C9A961] to-transparent mx-auto mb-6"></div>
                     <p className="text-lg text-[#6B6B6B] leading-relaxed mb-4">
                       The beloved father and spiritual predecessor, whose divine grace, unwavering devotion, and profound knowledge of the Qadriya path illuminated the way for seekers of truth. His blessed presence continues to inspire through his son's spiritual mission.
@@ -326,10 +316,14 @@ const About = () => {
               </h3>
               <div className="max-w-xl mx-auto">
                 <Card className="ornate-corners overflow-hidden shadow-gold-lg bg-gradient-to-br from-white to-[#F5F1E8]">
+                  <div className="w-full h-80 overflow-hidden">
+                    <img 
+                      src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/vhan66lu_syed%20ishfaq%20mohy%20uddin%20shah%20sahb.jpeg"
+                      alt="Syed Ishfaq Mohy Uddin Shah"
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
                   <CardContent className="p-8 text-center">
-                    <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-[#C9A961] to-[#8B9D83] rounded-full flex items-center justify-center shadow-xl logo-glow">
-                      <span className="text-6xl">🌙</span>
-                    </div>
                     <h3 className="text-3xl font-bold text-[#2C4A3E] mb-3 gradient-text-gold" style={{ fontFamily: 'Playfair Display, serif' }}>
                       Syed Ishfaq Mohy Uddin Shah
                     </h3>
