@@ -229,7 +229,7 @@ const Home = () => {
         </div>
 
         {/* Content - Title and subtitle positioned lower, avoiding faces */}
-        <div className="relative h-full flex items-end justify-center pb-32 sm:pb-36 md:pb-36 lg:pb-40 z-10">
+        <div className="relative h-full flex items-end justify-center pb-40 sm:pb-40 md:pb-36 lg:pb-40 z-10">
           <div className="max-w-6xl mx-auto px-4 md:px-12 text-center">
             {/* Static Title and Subtitle on ONE LINE - Playfair Display font */}
             <div>
