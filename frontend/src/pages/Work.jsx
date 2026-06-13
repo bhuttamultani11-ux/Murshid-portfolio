@@ -228,7 +228,7 @@ const Work = () => {
 
       {/* Upcoming Events */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-[#F5F1E8] to-[#FDFCF9]">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1A1A1A] mb-4" style={{ fontFamily: 'Crimson Text, serif' }}>
               Join Our Gatherings
@@ -238,37 +238,119 @@ const Work = () => {
             </p>
           </div>
 
-          <div className="space-y-6">
-            {upcomingEvents.map((event, index) => (
-              <Card key={index} className="bg-white border-[#8B9D83] border-opacity-30 hover:shadow-xl transition-all duration-300">
-                <CardContent className="pt-8 pb-8">
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <div className="flex items-center gap-4 md:col-span-2">
-                      <div className="w-14 h-14 bg-[#2C4A3E] rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Calendar className="w-7 h-7 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-[#1A1A1A]" style={{ fontFamily: 'Crimson Text, serif' }}>
-                          {event.event}
-                        </h3>
-                        <p className="text-[#8B9D83] font-medium">{event.date}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-5 h-5 text-[#8B9D83] flex-shrink-0" />
-                      <span className="text-[#6B6B6B]">{event.location}</span>
-                    </div>
-                    <div className="md:text-right">
-                      <Badge className="bg-[#8B9D83] text-white border-none">Open to All</Badge>
-                    </div>
+          {/* Monthly Events */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-[#2C4A3E] mb-8 text-center" style={{ fontFamily: 'Crimson Text, serif' }}>
+              📅 Monthly Gatherings
+            </h3>
+            <div className="max-w-2xl mx-auto">
+              <Card className="overflow-hidden border-4 border-[#C9A961] shadow-gold-lg hover:shadow-gold-xl transition-all duration-500 group">
+                <div className="relative">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/4nvk5wjq_monthly.jpg"
+                    alt="Monthly Gathering - 11th of every month at Darbar-e-Aliya Kot Sharif"
+                    className="w-full h-auto object-contain bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3]"
+                    style={{
+                      imageRendering: '-webkit-optimize-contrast',
+                      maxWidth: '100%',
+                      height: 'auto',
+                    }}
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
+                    <Badge className="bg-gradient-to-r from-[#C9A961] to-[#8B9D83] text-white border-none text-base">
+                      Monthly Event
+                    </Badge>
                   </div>
-                  <Separator className="my-6" />
+                </div>
+                <CardContent className="p-6 bg-gradient-to-b from-white to-[#F5F1E8]/50">
+                  <h4 className="text-2xl font-bold text-[#2C4A3E] mb-3">Monthly Khatam Pak - 11th Date</h4>
+                  <div className="flex items-center gap-2 text-[#6B6B6B] mb-3">
+                    <MapPin className="w-5 h-5 text-[#C9A961]" />
+                    <span>Darbar-e-Aliya Kot Sharif</span>
+                  </div>
                   <p className="text-[#6B6B6B] leading-relaxed">
-                    {event.description}
+                    Join us every 11th of the lunar month for Qawwali, spiritual discourse, and collective remembrance at Darbar-e-Aliya.
                   </p>
                 </CardContent>
               </Card>
-            ))}
+            </div>
+          </div>
+
+          {/* Annual Events */}
+          <div>
+            <h3 className="text-3xl font-bold text-[#2C4A3E] mb-8 text-center" style={{ fontFamily: 'Crimson Text, serif' }}>
+              🌟 Annual Celebrations
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* February Event - Urs Mubarak */}
+              <Card className="overflow-hidden border-4 border-[#8B9D83] shadow-lg hover:shadow-gold-lg transition-all duration-500 group">
+                <div className="relative">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/owbi6v0w_feb.jpg"
+                    alt="Urs Mubarak - February 21-22"
+                    className="w-full h-auto object-contain bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3]"
+                    style={{
+                      imageRendering: '-webkit-optimize-contrast',
+                      maxWidth: '100%',
+                      height: 'auto',
+                    }}
+                  />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
+                    <span className="text-sm font-bold text-[#C9A961]">February</span>
+                  </div>
+                </div>
+                <CardContent className="p-5 bg-white">
+                  <h4 className="text-xl font-bold text-[#2C4A3E] mb-2">Urs Mubarak</h4>
+                  <p className="text-sm text-[#6B6B6B]">February 21-22 | Darbar-e-Aliya</p>
+                </CardContent>
+              </Card>
+
+              {/* September Event - Urs Mubarak */}
+              <Card className="overflow-hidden border-4 border-[#8B9D83] shadow-lg hover:shadow-gold-lg transition-all duration-500 group">
+                <div className="relative">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/yj0s015t_sep.jpg"
+                    alt="Urs Mubarak - September 21-23"
+                    className="w-full h-auto object-contain bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3]"
+                    style={{
+                      imageRendering: '-webkit-optimize-contrast',
+                      maxWidth: '100%',
+                      height: 'auto',
+                    }}
+                  />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
+                    <span className="text-sm font-bold text-[#C9A961]">September</span>
+                  </div>
+                </div>
+                <CardContent className="p-5 bg-white">
+                  <h4 className="text-xl font-bold text-[#2C4A3E] mb-2">Urs Mubarak</h4>
+                  <p className="text-sm text-[#6B6B6B]">September 21-23 | Kot Sharif</p>
+                </CardContent>
+              </Card>
+
+              {/* December Event - Milad Sharif */}
+              <Card className="overflow-hidden border-4 border-[#8B9D83] shadow-lg hover:shadow-gold-lg transition-all duration-500 group">
+                <div className="relative">
+                  <img 
+                    src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/apvrdzye_dec.jpg"
+                    alt="Milad Sharif - December 21-22"
+                    className="w-full h-auto object-contain bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3]"
+                    style={{
+                      imageRendering: '-webkit-optimize-contrast',
+                      maxWidth: '100%',
+                      height: 'auto',
+                    }}
+                  />
+                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
+                    <span className="text-sm font-bold text-[#C9A961]">December</span>
+                  </div>
+                </div>
+                <CardContent className="p-5 bg-white">
+                  <h4 className="text-xl font-bold text-[#2C4A3E] mb-2">Milad Sharif</h4>
+                  <p className="text-sm text-[#6B6B6B]">December 21-22 | Darbar-e-Aliya</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
