@@ -21,7 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<Work />} />
           <Route path="/teachings" element={<Teachings />} />
-          <Route path="/lineage" element={<Lineage />} />
+          <Route path="/lineage" element={<LineageComplete />} />
           <Route path="/literature" element={<Literature />} />
           <Route path="/gallery" element={<Gallery />} />
         </Routes>
