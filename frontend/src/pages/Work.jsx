@@ -256,11 +256,6 @@ const Work = () => {
                       height: 'auto',
                     }}
                   />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                    <Badge className="bg-gradient-to-r from-[#C9A961] to-[#8B9D83] text-white border-none text-base">
-                      Monthly Event
-                    </Badge>
-                  </div>
                 </div>
                 <CardContent className="p-6 bg-gradient-to-b from-white to-[#F5F1E8]/50">
                   <h4 className="text-2xl font-bold text-[#2C4A3E] mb-3">Monthly Khatam Pak - 11th Date</h4>
@@ -295,9 +290,6 @@ const Work = () => {
                       height: 'auto',
                     }}
                   />
-                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
-                    <span className="text-sm font-bold text-[#C9A961]">February</span>
-                  </div>
                 </div>
                 <CardContent className="p-5 bg-white">
                   <h4 className="text-xl font-bold text-[#2C4A3E] mb-2">Urs Mubarak</h4>
@@ -318,9 +310,6 @@ const Work = () => {
                       height: 'auto',
                     }}
                   />
-                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
-                    <span className="text-sm font-bold text-[#C9A961]">September</span>
-                  </div>
                 </div>
                 <CardContent className="p-5 bg-white">
                   <h4 className="text-xl font-bold text-[#2C4A3E] mb-2">Urs Mubarak</h4>
@@ -341,9 +330,6 @@ const Work = () => {
                       height: 'auto',
                     }}
                   />
-                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
-                    <span className="text-sm font-bold text-[#C9A961]">December</span>
-                  </div>
                 </div>
                 <CardContent className="p-5 bg-white">
                   <h4 className="text-xl font-bold text-[#2C4A3E] mb-2">Milad Sharif</h4>
