@@ -9,6 +9,12 @@ import { Separator } from '../components/ui/separator';
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [currentGallerySet, setCurrentGallerySet] = useState(0);
+  
+  // Gallery images - total 8 images, showing 4 at a time
+  const galleryImages = [1, 2, 5, 7, 8, 10, 12, 15];
+  const imagesPerSet = 4;
+  const totalSets = Math.ceil(galleryImages.length / imagesPerSet);
   
   // Desktop hero images with titles and subtitles (no typing animation)
   const heroImagesDesktop = [
@@ -95,6 +101,15 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Gallery auto-rotation effect
+  useEffect(() => {
+    const galleryInterval = setInterval(() => {
+      setCurrentGallerySet((prev) => (prev + 1) % totalSets);
+    }, 5000); // Change gallery set every 5 seconds
+
+    return () => clearInterval(galleryInterval);
+  }, [totalSets]);
 
   const globalReach = [
     { country: 'United Kingdom', purpose: 'Spiritual gatherings and community building', icon: Globe2 },
@@ -309,7 +324,7 @@ const Home = () => {
                 className="bg-[#C9A961] hover:bg-[#8B9D83] text-white px-8 py-6 text-lg shadow-xl"
               >
                 <Link to="/about">
-                  About Me
+                  Biography
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
@@ -319,7 +334,7 @@ const Home = () => {
                 variant="outline" 
                 className="border-2 border-white text-white hover:bg-white hover:text-[#2C4A3E] px-8 py-6 text-lg"
               >
-                <Link to="/work"> Work & Impact</Link>
+                <Link to="/lineage">Sacred Lineage</Link>
               </Button>
             </div>
           </div>
@@ -549,7 +564,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Image Gallery Preview */}
+      {/* Image Gallery Preview - Dynamic with Animations */}
       <section className="py-20 bg-[#FDFCF9]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center mb-12">
@@ -561,15 +576,60 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {[1, 2, 5, 7].map((num) => (
-              <div key={num} className="aspect-square overflow-hidden rounded-xl shadow-lg group cursor-pointer">
-                <img 
-                  src={`https://babarkatbafaiz.com/gallery/${num}.jpg`}
-                  alt={`Gathering ${num}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
+          {/* Dynamic Gallery Grid with Enter/Exit Animations */}
+          <div className="relative h-[500px] md:h-[600px] mb-8">
+            {[...Array(totalSets)].map((_, setIndex) => {
+              const startIdx = setIndex * imagesPerSet;
+              const endIdx = Math.min(startIdx + imagesPerSet, galleryImages.length);
+              const currentImages = galleryImages.slice(startIdx, endIdx);
+
+              return (
+                <div
+                  key={setIndex}
+                  className={`absolute inset-0 grid grid-cols-2 md:grid-cols-4 gap-4 transition-all duration-1000 ${
+                    setIndex === currentGallerySet
+                      ? 'opacity-100 translate-y-0'
+                      : setIndex < currentGallerySet
+                      ? 'opacity-0 -translate-y-10'
+                      : 'opacity-0 translate-y-10'
+                  }`}
+                  style={{
+                    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                  }}
+                >
+                  {currentImages.map((num, idx) => (
+                    <div
+                      key={num}
+                      className="aspect-square overflow-hidden rounded-xl shadow-lg group cursor-pointer"
+                      style={{
+                        animation: setIndex === currentGallerySet ? `fadeInScale 0.8s ease-out ${idx * 0.1}s both` : 'none',
+                      }}
+                    >
+                      <img
+                        src={`https://babarkatbafaiz.com/gallery/${num}.jpg`}
+                        alt={`Gathering ${num}`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Gallery Navigation Dots */}
+          <div className="flex justify-center gap-2 mb-8">
+            {[...Array(totalSets)].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentGallerySet(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentGallerySet
+                    ? 'bg-[#C9A961] w-8'
+                    : 'bg-[#8B9D83]/30 w-2 hover:bg-[#8B9D83]/60'
+                }`}
+                aria-label={`View gallery set ${index + 1}`}
+              />
             ))}
           </div>
 
@@ -645,15 +705,12 @@ const Home = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-[#F5F1E8] p-6 rounded-xl text-center">
-                    <div className="text-4xl font-bold text-[#2C4A3E] mb-2">15+</div>
                     <div className="text-sm text-[#6B6B6B]">Years of Service</div>
                   </div>
                   <div className="bg-[#F5F1E8] p-6 rounded-xl text-center">
-                    <div className="text-4xl font-bold text-[#2C4A3E] mb-2">6</div>
                     <div className="text-sm text-[#6B6B6B]">Countries Visited</div>
                   </div>
                   <div className="bg-[#F5F1E8] p-6 rounded-xl text-center col-span-2">
-                    <div className="text-4xl font-bold text-[#2C4A3E] mb-2">1000+</div>
                     <div className="text-sm text-[#6B6B6B]">Lives Touched Globally</div>
                   </div>
                 </div>
@@ -693,6 +750,17 @@ const Home = () => {
           to {
             opacity: 1;
             transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInScale {
+          0% {
+            opacity: 0;
+            transform: scale(0.8) translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
           }
         }
 
