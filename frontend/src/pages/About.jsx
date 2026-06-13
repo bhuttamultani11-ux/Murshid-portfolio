@@ -245,7 +245,7 @@ const About = () => {
                     <div className="relative">
                       <div className="w-full h-96 bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3] flex items-center justify-center">
                         <img 
-                          src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/3o0enxan_peer%20syed%20faiz%20mohy%20uddin%20shah%20sahb.jpeg"
+                          src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/34rhnvpy_peer%20syed%20faiz%20mohy%20uddin%20shah%20sahb.jpg"
                           alt="Peer Syed Faiz Mohy Uddin Shah"
                           className="w-full h-full object-contain p-2"
                         />
@@ -282,7 +282,7 @@ const About = () => {
                   <div className="relative">
                     <div className="w-full h-96 bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3] flex items-center justify-center">
                       <img 
-                        src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/rofl19cw_syed%20nazar%20mohy%20uddin%20shah%20sahb.jpeg"
+                        src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/llczszxs_syed%20nazar%20mohy%20uddin%20shah%20sahb.jpg"
                         alt="Syed Nazar Mohy Uddin Shah Sahb"
                         className="w-full h-full object-contain p-2"
                       />
