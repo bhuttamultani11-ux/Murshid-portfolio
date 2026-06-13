@@ -217,11 +217,11 @@ const About = () => {
                 <div className="group">
                   <Card className="ornate-corners overflow-hidden shadow-gold-lg hover:shadow-gold transition-all duration-500">
                     <div className="relative">
-                      <div className="w-full h-96 overflow-hidden">
+                      <div className="w-full h-96 bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3] flex items-center justify-center">
                         <img 
                           src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/23o1zvs9_peer%20syed%20barkat%20ali%20shah%20sahb.jpeg"
                           alt="Peer Syed Barkat Ali Shah"
-                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-contain p-2"
                         />
                       </div>
                       <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
@@ -243,11 +243,11 @@ const About = () => {
                 <div className="group">
                   <Card className="ornate-corners overflow-hidden shadow-gold-lg hover:shadow-gold transition-all duration-500">
                     <div className="relative">
-                      <div className="w-full h-96 overflow-hidden">
+                      <div className="w-full h-96 bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3] flex items-center justify-center">
                         <img 
                           src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/3o0enxan_peer%20syed%20faiz%20mohy%20uddin%20shah%20sahb.jpeg"
                           alt="Peer Syed Faiz Mohy Uddin Shah"
-                          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-contain p-2"
                         />
                       </div>
                       <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2">
@@ -280,11 +280,11 @@ const About = () => {
               <div className="max-w-2xl mx-auto">
                 <Card className="ornate-corners overflow-hidden shadow-gold-lg hover:shadow-gold transition-all duration-500">
                   <div className="relative">
-                    <div className="w-full h-96 overflow-hidden">
+                    <div className="w-full h-96 bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3] flex items-center justify-center">
                       <img 
                         src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/rofl19cw_syed%20nazar%20mohy%20uddin%20shah%20sahb.jpeg"
                         alt="Syed Nazar Mohy Uddin Shah Sahb"
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-contain p-2"
                       />
                     </div>
                   </div>
@@ -316,11 +316,11 @@ const About = () => {
               </h3>
               <div className="max-w-xl mx-auto">
                 <Card className="ornate-corners overflow-hidden shadow-gold-lg bg-gradient-to-br from-white to-[#F5F1E8]">
-                  <div className="w-full h-80 overflow-hidden">
+                  <div className="w-full h-80 bg-gradient-to-br from-[#F5F1E8] to-[#FAF8F3] flex items-center justify-center">
                     <img 
                       src="https://customer-assets.emergentagent.com/job_qadriya-hub/artifacts/vhan66lu_syed%20ishfaq%20mohy%20uddin%20shah%20sahb.jpeg"
                       alt="Syed Ishfaq Mohy Uddin Shah"
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-contain p-2"
                     />
                   </div>
                   <CardContent className="p-8 text-center">
